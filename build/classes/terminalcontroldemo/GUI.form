@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 720]"/>
+    <Property name="title" type="java.lang.String" value="TerminalControlDEMO"/>
+    <Property name="location" type="java.awt.Point" editor="org.netbeans.beaninfo.editors.PointEditor">
+      <Point value="[5, 5]"/>
     </Property>
     <Property name="resizable" type="boolean" value="false"/>
     <Property name="size" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[1280, 720]"/>
+      <Dimension value="[1280, 800]"/>
     </Property>
   </Properties>
   <SyntheticProperties>
@@ -21,7 +22,7 @@
     <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
     <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
@@ -32,34 +33,72 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="mainTabpanel" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="TabbedPanel" alignment="1" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="labTerminalIP" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="terminalIP" min="-2" pref="98" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="141" max="-2" attributes="0"/>
+                      <Component id="labAlarmInfo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="441" max="-2" attributes="0"/>
+                      <Component id="labtelnet" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btntelnet" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
+          <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="mainTabpanel" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="labTerminalIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="terminalIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="labAlarmInfo" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                      <Component id="labtelnet" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="btntelnet" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
+              <Component id="TabbedPanel" min="-2" pref="535" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jScrollPane1" pref="206" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JTabbedPane" name="mainTabpanel">
+    <Container class="javax.swing.JTabbedPane" name="TabbedPanel">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="TerminalControlDEMO"/>
+        <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+          <Color id="&#x9ed8;&#x8ba4;&#x5149;&#x6807;"/>
+        </Property>
+      </Properties>
       <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="tab2"/>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="" postCode="for (int tab=0;tab&lt;(TabbedPanel.getTabCount()-1);tab++){&#xa;TabbedPanel.setEnabledAt(tab, false);&#xa;}"/>
       </AccessibilityProperties>
 
       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
       <SubComponents>
-        <Container class="javax.swing.JPanel" name="settings">
+        <Container class="javax.swing.JPanel" name="X300">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
-              <JTabbedPaneConstraints tabName="&#x8bbe;&#x7f6e;">
-                <Property name="tabTitle" type="java.lang.String" value="&#x8bbe;&#x7f6e;"/>
+              <JTabbedPaneConstraints tabName="X300">
+                <Property name="tabTitle" type="java.lang.String" value="X300"/>
               </JTabbedPaneConstraints>
             </Constraint>
           </Constraints>
@@ -67,21 +106,21 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                              <Component id="labVideo_X300" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jPanel1" max="32767" attributes="0"/>
+                              <Component id="videoSettings_X300" max="32767" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labAudio_X300" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="videoSettings" min="-2" max="-2" attributes="0"/>
+                              <Component id="audioSettings_X300" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -90,31 +129,31 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                          <Component id="videoSettings" min="-2" max="-2" attributes="0"/>
+                          <Component id="labVideo_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="videoSettings_X300" alignment="0" min="-2" pref="317" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                          <Component id="labAudio_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="audioSettings_X300" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="labVideo_X300">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x89c6;&#x9891;&#x8bbe;&#x7f6e;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel2">
+            <Component class="javax.swing.JLabel" name="labAudio_X300">
               <Properties>
                 <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8bbe;&#x7f6e;"/>
               </Properties>
             </Component>
-            <Container class="javax.swing.JPanel" name="videoSettings">
+            <Container class="javax.swing.JPanel" name="videoSettings_X300">
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -122,85 +161,99 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="selectVidOutput" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="222" max="-2" attributes="0"/>
-                                  <Component id="selectVidApply" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="selectVidInput" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jSeparator2" min="-2" pref="959" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="mainVideoPrePAL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="assVideoPrePAL" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="mainVideoPAL" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="assVideoPAL" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="videoPALApply" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
-                              <Component id="jSeparator1" alignment="0" min="-2" pref="959" max="-2" attributes="0"/>
+                              <Component id="jSeparator4" alignment="0" pref="1300" max="32767" attributes="0"/>
+                              <Component id="jSeparator5" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jSeparator6" alignment="0" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel7" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="assVideoSource" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
-                                          <Component id="VidSourceApply" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="mainVidSource" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Component id="jSeparator3" alignment="0" min="-2" pref="959" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel13" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="HDMI3Output" min="-2" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel12" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="HDMI2Output" min="-2" max="-2" attributes="0"/>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVidPrefer_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidPrefer_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxAssVidPrefer_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboboxMainVidPrefer_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVIdpreferPAL_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidPreferPAL_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxmainVideoPrePAL_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <Component id="labmainVidPAL_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="comboboxmainVideoPAL_X300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxassVideoPrePAL_X300" min="-2" pref="128" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnVidPreeferApply_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="labassVidPAL_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxassVideoPAL_X300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="btnvideoPALApply_X300" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="jLabel11" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                          <Component id="VGAOutput" min="-2" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVidSource_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidSource_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxmainVidSource_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxassVideoSource_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="btnVidSourceApply_X300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="labVidInType_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxselectVidInput_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="labVGAOut_X300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="labVidOutType_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxselectVidOutput_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="labHDMI3Out_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="labHDMI2OOut_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxHDMI2Output_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboboxVGAOutput_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxHDMI3Output_X300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="btnVidMatrixApply_X300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
                                       </Group>
                                   </Group>
-                                  <EmptySpace min="-2" pref="228" max="-2" attributes="0"/>
-                                  <Component id="VdiMatrixApply" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="274" max="32767" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -209,93 +262,83 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="mainVideoPrePAL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="mainVideoPAL" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxMainVidPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVidPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVIdpreferPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVideoPrePAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVidPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVideoPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="assVideoPrePAL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabel6" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="assVideoPAL" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="videoPALApply" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxAssVidPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidPreferPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxassVideoPrePAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVidPreeferApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxassVideoPAL_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnvideoPALApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSeparator4" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel7" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="mainVidSource" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVidSource_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVidSource_X300" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="assVideoSource" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="VidSourceApply" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidSource_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                                  <Component id="comboboxassVideoSource_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnVidSourceApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labVGAOut_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxVGAOutput_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labVidInType_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxselectVidInput_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labHDMI2OOut_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxHDMI2Output_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labVidOutType_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxselectVidOutput_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labHDMI3Out_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxHDMI3Output_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVidMatrixApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="selectVidInput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="selectVidOutput" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="selectVidApply" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="jSeparator3" min="-2" pref="10" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel11" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="VGAOutput" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel12" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="HDMI2Output" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabel13" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="HDMI3Output" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="VdiMatrixApply" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace pref="62" max="32767" attributes="0"/>
+                          <Component id="jSeparator6" min="-2" pref="12" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
               <SubComponents>
-                <Component class="javax.swing.JLabel" name="jLabel3">
+                <Component class="javax.swing.JLabel" name="labmainVIdpreferPAL_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x4f18;&#x9009;&#x5206;&#x8fa8;&#x7387;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel4">
+                <Component class="javax.swing.JLabel" name="labassVidPreferPAL_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x4f18;&#x9009;&#x5206;&#x8fa8;&#x7387;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="mainVideoPrePAL">
+                <Component class="javax.swing.JComboBox" name="comboboxmainVideoPrePAL_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="7">
-                        <StringItem index="0" value="Auto"/>
-                        <StringItem index="1" value="1080P(1920x1080)"/>
-                        <StringItem index="2" value="720P(1280x720)"/>
-                        <StringItem index="3" value="W4CIF(1024x576)"/>
-                        <StringItem index="4" value="4CIF(704x576)"/>
-                        <StringItem index="5" value="WCIF(512x288)"/>
-                        <StringItem index="6" value="CIF(352x288)"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                       <Dimension value="[128, 21]"/>
@@ -305,114 +348,72 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mainVideoPrePALActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxmainVideoPrePAL_X300ActionPerformed"/>
                   </Events>
                   <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String defaultMain_X300=(String)getVidPrefer(&quot;X300&quot;,&quot;main&quot;)[0];&#xa;comboboxmainVideoPrePAL_X300.setModel(new DefaultComboBoxModel(getVidPAL(&quot;X300&quot;,&quot;main&quot;,defaultMain_X300)));"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="assVideoPrePAL">
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoPrePAL_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="11">
-                        <StringItem index="0" value="Auto"/>
-                        <StringItem index="1" value="1080P(1920x1080)"/>
-                        <StringItem index="2" value="720P(1280x720)"/>
-                        <StringItem index="3" value="WSXGA+(1680x1050)"/>
-                        <StringItem index="4" value="UXGA(1600x1200)"/>
-                        <StringItem index="5" value="WSXGA(1440x900)"/>
-                        <StringItem index="6" value="WXGA(1366x768)"/>
-                        <StringItem index="7" value="SXGA(1280x1024)"/>
-                        <StringItem index="8" value="WXGA(1280x800)"/>
-                        <StringItem index="9" value="WXGA(1280x768)"/>
-                        <StringItem index="10" value="XGA(1024*768)"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String defaultAss_X300=(String)getVidPrefer(&quot;X300&quot;,&quot;ass&quot;)[0];&#xa;comboboxassVideoPrePAL_X300.setModel(new DefaultComboBoxModel(getVidPAL(&quot;X300&quot;,&quot;ass&quot;,defaultAss_X300)));&#xa;        comboboxassVideoPrePAL_X300.setMinimumSize(new java.awt.Dimension(128, 21));&#xa;        comboboxassVideoPrePAL_X300.setPreferredSize(new java.awt.Dimension(128, 21));"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="labmainVidPAL_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x8f93;&#x51fa;&#x5206;&#x8fa8;&#x7387;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="mainVideoPAL">
+                <Component class="javax.swing.JComboBox" name="comboboxmainVideoPAL_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="17">
-                        <StringItem index="0" value="1080P_60fps"/>
-                        <StringItem index="1" value="1080P_24fps"/>
-                        <StringItem index="2" value="1080P_25fps"/>
-                        <StringItem index="3" value="1080P_29.97fps"/>
-                        <StringItem index="4" value="1080P_30fps"/>
-                        <StringItem index="5" value="1080P_50fps"/>
-                        <StringItem index="6" value="1080P_59.94fps"/>
-                        <StringItem index="7" value="UXGA(1600&#xd7;1200)_60Hz"/>
-                        <StringItem index="8" value="WSXGA+(1680&#xd7;1050)_60Hz"/>
-                        <StringItem index="9" value="SXGA(1280&#xd7;1024)_60Hz"/>
-                        <StringItem index="10" value="WSXGA(1440&#xd7;900)_60Hz"/>
-                        <StringItem index="11" value="720P_50fps"/>
-                        <StringItem index="12" value="720P_60fps"/>
-                        <StringItem index="13" value="XGA(1024&#xd7;768)_60Hz"/>
-                        <StringItem index="14" value="XGA(1024&#xd7;768)_75Hz"/>
-                        <StringItem index="15" value="WXGA(1366&#xd7;768)_60Hz"/>
-                        <StringItem index="16" value="WXGA(1280&#xd7;800)_60Hz"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="//sky300ini terminalcontroldemo.Sky300ini = new terminalcontroldemo.Sky300ini();&#xa;&#xa;        terminalcontroldemo.Sky300ini.mainVidOutPAL.keySet().forEach((key) -&gt; {&#xa;           comboboxmainVideoPAL_sky300.addItem(key.toString());&#xa;        });"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel6">
+                <Component class="javax.swing.JLabel" name="labassVidPAL_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x8f93;&#x51fa;&#x5206;&#x8fa8;&#x7387;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="assVideoPAL">
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoPAL_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                      <StringArray count="18">
-                        <StringItem index="0" value="Auto"/>
-                        <StringItem index="1" value="1080P_60fps"/>
-                        <StringItem index="2" value="1080P_24fps"/>
-                        <StringItem index="3" value="1080P_25fps"/>
-                        <StringItem index="4" value="1080P_29.97fps"/>
-                        <StringItem index="5" value="1080P_30fps"/>
-                        <StringItem index="6" value="1080P_50fps"/>
-                        <StringItem index="7" value="1080P_59.94fps"/>
-                        <StringItem index="8" value="UXGA(1600&#xd7;1200)_60Hz"/>
-                        <StringItem index="9" value="WSXGA+(1680&#xd7;1050)_60Hz"/>
-                        <StringItem index="10" value="SXGA(1280&#xd7;1024)_60Hz"/>
-                        <StringItem index="11" value="WSXGA(1440&#xd7;900)_60Hz"/>
-                        <StringItem index="12" value="720P_50fps"/>
-                        <StringItem index="13" value="720P_60fps"/>
-                        <StringItem index="14" value="XGA(1024&#xd7;768)_60Hz"/>
-                        <StringItem index="15" value="XGA(1024&#xd7;768)_75Hz"/>
-                        <StringItem index="16" value="WXGA(1366&#xd7;768)_60Hz"/>
-                        <StringItem index="17" value="WXGA(1280&#xd7;800)_60Hz"/>
-                      </StringArray>
+                      <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="terminalcontroldemo.Sky300ini.assVidOutPAL.keySet().forEach((key) -&gt; {&#xa;          comboboxassVideoPAL_sky300.addItem(key.toString());&#xa;        });"/>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="videoPALApply">
+                <Component class="javax.swing.JButton" name="btnvideoPALApply_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnvideoPALApply_X300ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JSeparator" name="jSeparator1">
+                <Component class="javax.swing.JSeparator" name="jSeparator4">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
+                <Component class="javax.swing.JLabel" name="labmainVidSource_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x6e90;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="mainVidSource">
+                <Component class="javax.swing.JComboBox" name="comboboxmainVidSource_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="1">
@@ -430,12 +431,12 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel8">
+                <Component class="javax.swing.JLabel" name="labassVidSource_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x6e90;"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="assVideoSource">
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoSource_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -454,14 +455,14 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JSeparator" name="jSeparator2">
+                <Component class="javax.swing.JSeparator" name="jSeparator5">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="labVidInType_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x8f93;&#x5165;:VGA/YpbPr_1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="selectVidInput">
+                <Component class="javax.swing.JComboBox" name="comboboxselectVidInput_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -480,12 +481,12 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel10">
+                <Component class="javax.swing.JLabel" name="labVidOutType_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x8f93;&#x51fa;:VGA/YpbPr_1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="selectVidOutput">
+                <Component class="javax.swing.JComboBox" name="comboboxselectVidOutput_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="2">
@@ -500,23 +501,24 @@
                       <Dimension value="[128, 21]"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxselectVidOutput_X300ActionPerformed"/>
+                  </Events>
                   <AuxValues>
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="VidSourceApply">
+                <Component class="javax.swing.JButton" name="btnVidPreeferApply_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidPreeferApply_X300ActionPerformed"/>
+                  </Events>
                 </Component>
-                <Component class="javax.swing.JButton" name="selectVidApply">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
-                  </Properties>
+                <Component class="javax.swing.JSeparator" name="jSeparator6">
                 </Component>
-                <Component class="javax.swing.JSeparator" name="jSeparator3">
-                </Component>
-                <Component class="javax.swing.JComboBox" name="VGAOutput">
+                <Component class="javax.swing.JComboBox" name="comboboxVGAOutput_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="5">
@@ -539,22 +541,22 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="labVGAOut_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="VGA/YpbPr_1"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel12">
+                <Component class="javax.swing.JLabel" name="labHDMI2OOut_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="HDMI_2"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel13">
+                <Component class="javax.swing.JLabel" name="labHDMI3Out_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="HDMI_3"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="HDMI2Output">
+                <Component class="javax.swing.JComboBox" name="comboboxHDMI2Output_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -575,7 +577,7 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JComboBox" name="HDMI3Output">
+                <Component class="javax.swing.JComboBox" name="comboboxHDMI3Output_X300">
                   <Properties>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="4">
@@ -596,27 +598,1157 @@
                     <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
                   </AuxValues>
                 </Component>
-                <Component class="javax.swing.JButton" name="VdiMatrixApply">
+                <Component class="javax.swing.JButton" name="btnVidMatrixApply_X300">
                   <Properties>
                     <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidMatrixApply_X300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labmainVidPrefer_X300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x4f18;&#x9009;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labassVidPrefer_X300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x4f18;&#x9009;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxMainVidPrefer_X300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboboxMainVidPrefer_X300ItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="comboboxMainVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer(&quot;X300&quot;,&quot;main&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxAssVidPrefer_X300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboboxAssVidPrefer_X300ItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="comboboxAssVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer(&quot;X300&quot;,&quot;ass&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVidSourceApply_X300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidSourceApply_X300ActionPerformed"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="javax.swing.JPanel" name="jPanel1">
+            <Container class="javax.swing.JPanel" name="audioSettings_X300">
 
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="labAudPrefer_X300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="comboboxAudPrefer_X300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAudPreferApply_X300" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="panelaudIn_X300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="panelaudOut_X300" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <EmptySpace min="0" pref="209" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labAudPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxAudPrefer_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAudPreferApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="panelaudOut_X300" alignment="0" max="32767" attributes="0"/>
+                              <Component id="panelaudIn_X300" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JComboBox" name="comboboxAudPrefer_X300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="terminalcontroldemo.Sky300ini.AudPrefer.keySet().forEach((key) -&gt; {&#xa;         comboboxAudPrefer_sky300.addItem(key.toString());&#xa;        });"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labAudPrefer_X300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4f18;&#x9009;&#x97f3;&#x9891;&#x534f;&#x8bae;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnAudPreferApply_X300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudPreferApply_X300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JPanel" name="panelaudIn_X300">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labaudIn_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cboxAudInHDMI_X300" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnaudIn_X300" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cboxAudInAUX_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="comboboxAudMIC_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labaudIn_X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="comboboxAudMIC_X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cboxAudInAUX_X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboxAudInHDMI_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnaudIn_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JComboBox" name="comboboxAudMIC_X300">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="5">
+                            <StringItem index="0" value="&#x5361;&#x4fac;MIC"/>
+                            <StringItem index="1" value="&#x6570;&#x5b57;MIC"/>
+                            <StringItem index="2" value="&#x65e0;&#x7ebf;MIC"/>
+                            <StringItem index="3" value="&#x5185;&#x7f6e;MIC"/>
+                            <StringItem index="4" value="&#x65e0;MIC"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudInAUX_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AUX"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudInAUX_X300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudInAUX_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudInHDMI_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudInHDMI_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="labaudIn_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8f93;&#x5165;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnaudIn_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaudIn_X300ActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="panelaudOut_X300">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labAudOut_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cboxAudOutHDMI3_X300" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnAudOUTApply_X300" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cboxAudOutAUX__X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbocxAudOutHDMI2_X300" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labAudOut_X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="cboxAudOutAUX__X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="cbocxAudOutHDMI2_X300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboxAudOutHDMI3_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAudOUTApply_X300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudOutAUX__X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AUX"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudOutAUX__X300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudOutAUX__sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudOutHDMI3_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI3"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudOutHDMI3_X300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudOutHDMI3_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="labAudOut_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8f93;&#x51fa;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cbocxAudOutHDMI2_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI2"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cbocxAudOutHDMI2_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAudOUTApply_X300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudOUTApply_X300ActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
+            </Container>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="SKY300">
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Sky300">
+                <Property name="tabTitle" type="java.lang.String" value="Sky300"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="labVideo_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="videoSettings_sky300" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="labAudio_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="audioSettings_sky300" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labVideo_sky300" min="-2" max="-2" attributes="0"/>
+                          <Component id="videoSettings_sky300" min="-2" pref="317" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="labAudio_sky300" min="-2" max="-2" attributes="0"/>
+                          <Component id="audioSettings_sky300" min="-2" pref="166" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="labVideo_sky300">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x89c6;&#x9891;&#x8bbe;&#x7f6e;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="labAudio_sky300">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8bbe;&#x7f6e;"/>
+              </Properties>
+            </Component>
+            <Container class="javax.swing.JPanel" name="videoSettings_sky300">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSeparator1" alignment="0" pref="1291" max="32767" attributes="0"/>
+                              <Component id="jSeparator2" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jSeparator3" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Group type="103" groupAlignment="0" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVidPrefer_sky300" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidPrefer_sky300" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxAssVidPrefer_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboboxMainVidPrefer_sky300" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVIdpreferPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidPreferPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Group type="102" attributes="0">
+                                                  <Component id="comboboxmainVideoPrePAL_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
+                                                  <Component id="labmainVidPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace max="32767" attributes="0"/>
+                                                  <Component id="comboboxmainVideoPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" attributes="0">
+                                                  <Component id="comboboxassVideoPrePAL_sky300" min="-2" pref="128" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="btnVidPreeferApply_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="labassVidPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxassVideoPAL_sky300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Component id="btnvideoPALApply_sky300" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="labmainVidSource_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Component id="labassVidSource_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxmainVidSource_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxassVideoSource_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                                  <Component id="btnVidSourceApply_sky300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                      <Group type="102" alignment="0" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="labVidInType_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxselectVidInput_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="labVGAOut_sky300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="labVidOutType_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="comboboxselectVidOutput_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Group type="103" groupAlignment="0" attributes="0">
+                                                      <Component id="labHDMI3Out_sky300" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="labHDMI2OOut_sky300" min="-2" max="-2" attributes="0"/>
+                                                  </Group>
+                                              </Group>
+                                          </Group>
+                                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="comboboxHDMI2Output_sky300" min="-2" max="-2" attributes="0"/>
+                                              <Component id="comboboxVGAOutput_sky300" min="-2" max="-2" attributes="0"/>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="comboboxHDMI3Output_sky300" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="btnVidMatrixApply_sky300" min="-2" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="comboboxMainVidPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVidPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVIdpreferPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVideoPrePAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labmainVidPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVideoPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labassVidPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxAssVidPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidPreferPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxassVideoPrePAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVidPreeferApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labassVidPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxassVideoPAL_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnvideoPALApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labmainVidSource_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxmainVidSource_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="labassVidSource_sky300" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="comboboxassVideoSource_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnVidSourceApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                          <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labVGAOut_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxVGAOutput_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labVidInType_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxselectVidInput_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labHDMI2OOut_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxHDMI2Output_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="labVidOutType_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxselectVidOutput_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labHDMI3Out_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxHDMI3Output_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnVidMatrixApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSeparator3" min="-2" pref="12" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JLabel" name="labmainVIdpreferPAL_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x4f18;&#x9009;&#x5206;&#x8fa8;&#x7387;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labassVidPreferPAL_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x4f18;&#x9009;&#x5206;&#x8fa8;&#x7387;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxmainVideoPrePAL_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxmainVideoPrePAL_sky300ActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String defaultMain_sky300=(String)getVidPrefer(&quot;sky300&quot;,&quot;main&quot;)[0];&#xa;comboboxmainVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(getVidPAL(&quot;sky300&quot;,&quot;main&quot;,defaultMain_sky300)));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoPrePAL_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="String defaultAss_sky300=(String)getVidPrefer(&quot;sky300&quot;,&quot;ass&quot;)[0];&#xa;comboboxassVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(getVidPAL(&quot;sky300&quot;,&quot;ass&quot;,defaultAss_sky300)));&#xa;        comboboxassVideoPrePAL_sky300.setMinimumSize(new java.awt.Dimension(128, 21));&#xa;        comboboxassVideoPrePAL_sky300.setPreferredSize(new java.awt.Dimension(128, 21));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labmainVidPAL_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x8f93;&#x51fa;&#x5206;&#x8fa8;&#x7387;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxmainVideoPAL_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="//sky300ini terminalcontroldemo.Sky300ini = new terminalcontroldemo.Sky300ini();&#xa;&#xa;        terminalcontroldemo.Sky300ini.mainVidOutPAL.keySet().forEach((key) -&gt; {&#xa;           comboboxmainVideoPAL_sky300.addItem(key.toString());&#xa;        });"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labassVidPAL_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x8f93;&#x51fa;&#x5206;&#x8fa8;&#x7387;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoPAL_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="terminalcontroldemo.Sky300ini.assVidOutPAL.keySet().forEach((key) -&gt; {&#xa;          comboboxassVideoPAL_sky300.addItem(key.toString());&#xa;        });"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnvideoPALApply_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnvideoPALApply_sky300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JSeparator" name="jSeparator1">
+                </Component>
+                <Component class="javax.swing.JLabel" name="labmainVidSource_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x6e90;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxmainVidSource_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="1">
+                        <StringItem index="0" value="&#x5185;&#x7f6e;&#x6444;&#x50cf;&#x673a;"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labassVidSource_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x6e90;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxassVideoSource_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="VGA/YPbPr_1"/>
+                        <StringItem index="1" value="HDMI_1"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JSeparator" name="jSeparator2">
+                </Component>
+                <Component class="javax.swing.JLabel" name="labVidInType_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f93;&#x5165;:VGA/YpbPr_1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxselectVidInput_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="VGA"/>
+                        <StringItem index="1" value="YPbPr_1"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labVidOutType_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f93;&#x51fa;:VGA/YpbPr_1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxselectVidOutput_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="2">
+                        <StringItem index="0" value="VGA"/>
+                        <StringItem index="1" value="YPbPr_1"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="comboboxselectVidOutput_sky300ActionPerformed"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVidPreeferApply_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidPreeferApply_sky300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JSeparator" name="jSeparator3">
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxVGAOutput_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="5">
+                        <StringItem index="0" value="&#x65e0;&#x8f93;&#x51fa;"/>
+                        <StringItem index="1" value="&#x4e3b;&#x89c6;&#x9891;"/>
+                        <StringItem index="2" value="&#x8f85;&#x89c6;&#x9891;"/>
+                        <StringItem index="3" value="VGA/YPbPr_1"/>
+                        <StringItem index="4" value="&#x5185;&#x7f6e;&#x6444;&#x50cf;&#x673a;"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="autoscrolls" type="boolean" value="true"/>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labVGAOut_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="VGA/YpbPr_1"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labHDMI2OOut_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="HDMI_2"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labHDMI3Out_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="HDMI_3"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxHDMI2Output_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="&#x4e3b;&#x89c6;&#x9891;"/>
+                        <StringItem index="1" value="&#x8f85;&#x89c6;&#x9891;"/>
+                        <StringItem index="2" value="VGA/YPbPr_1"/>
+                        <StringItem index="3" value="&#x5185;&#x7f6e;&#x6444;&#x50cf;&#x673a;"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxHDMI3Output_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="4">
+                        <StringItem index="0" value="&#x4e3b;&#x89c6;&#x9891;"/>
+                        <StringItem index="1" value="&#x8f85;&#x89c6;&#x9891;"/>
+                        <StringItem index="2" value="VGA/YPbPr_1"/>
+                        <StringItem index="3" value="&#x5185;&#x7f6e;&#x6444;&#x50cf;&#x673a;"/>
+                      </StringArray>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVidMatrixApply_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidMatrixApply_sky300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labmainVidPrefer_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4e3b;&#x89c6;&#x9891;&#x4f18;&#x9009;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labassVidPrefer_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x8f85;&#x89c6;&#x9891;&#x4f18;&#x9009;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxMainVidPrefer_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboboxMainVidPrefer_sky300ItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="comboboxMainVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer(&quot;sky300&quot;,&quot;main&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JComboBox" name="comboboxAssVidPrefer_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="comboboxAssVidPrefer_sky300ItemStateChanged"/>
+                  </Events>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="comboboxAssVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer(&quot;sky300&quot;,&quot;ass&quot;)));"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnVidSourceApply_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnVidSourceApply_sky300ActionPerformed"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Container class="javax.swing.JPanel" name="audioSettings_sky300">
+
+              <Layout>
+                <DimensionLayout dim="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                  <Component id="labAudPrefer_sky300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <Component id="comboboxAudPrefer_sky300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="btnAudPreferApply_sky300" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="panelaudIn_sky300" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="panelaudOut_sky300" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <EmptySpace max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+                <DimensionLayout dim="1">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="labAudPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="comboboxAudPrefer_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAudPreferApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="panelaudOut_sky300" max="32767" attributes="0"/>
+                              <Component id="panelaudIn_sky300" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
+                </DimensionLayout>
+              </Layout>
+              <SubComponents>
+                <Component class="javax.swing.JComboBox" name="comboboxAudPrefer_sky300">
+                  <Properties>
+                    <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                      <StringArray count="0"/>
+                    </Property>
+                    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+                      <Dimension value="[128, 21]"/>
+                    </Property>
+                  </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="terminalcontroldemo.Sky300ini.AudPrefer.keySet().forEach((key) -&gt; {&#xa;         comboboxAudPrefer_sky300.addItem(key.toString());&#xa;        });"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                  </AuxValues>
+                </Component>
+                <Component class="javax.swing.JLabel" name="labAudPrefer_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x4f18;&#x9009;&#x97f3;&#x9891;&#x534f;&#x8bae;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JButton" name="btnAudPreferApply_sky300">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudPreferApply_sky300ActionPerformed"/>
+                  </Events>
+                </Component>
+                <Container class="javax.swing.JPanel" name="panelaudIn_sky300">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labaudIn_sky300" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="cboxAudInHDMI_sky300" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="btnaudIn_sky300" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cboxAudInAUX_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="comboboxAudMIC_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labaudIn_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="comboboxAudMIC_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="cboxAudInAUX_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboxAudInHDMI_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnaudIn_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JComboBox" name="comboboxAudMIC_sky300">
+                      <Properties>
+                        <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                          <StringArray count="5">
+                            <StringItem index="0" value="&#x5361;&#x4fac;MIC"/>
+                            <StringItem index="1" value="&#x6570;&#x5b57;MIC"/>
+                            <StringItem index="2" value="&#x65e0;&#x7ebf;MIC"/>
+                            <StringItem index="3" value="&#x5185;&#x7f6e;MIC"/>
+                            <StringItem index="4" value="&#x65e0;MIC"/>
+                          </StringArray>
+                        </Property>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudInAUX_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AUX"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudInAUX_sky300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudInAUX_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudInHDMI_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudInHDMI_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="labaudIn_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8f93;&#x5165;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnaudIn_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaudIn_sky300ActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+                <Container class="javax.swing.JPanel" name="panelaudOut_sky300">
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="labAudOut_sky300" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="cboxAudOutHDMI3_sky300" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="btnAudOUTApply_sky300" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="cboxAudOutAUX__sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="cbocxAudOutHDMI2_sky300" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="labAudOut_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                              <Component id="cboxAudOutAUX__sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
+                              <Component id="cbocxAudOutHDMI2_sky300" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="3" attributes="0">
+                                  <Component id="cboxAudOutHDMI3_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnAudOUTApply_sky300" alignment="3" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="12" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudOutAUX__sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="AUX"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudOutAUX__sky300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudOutAUX__sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cboxAudOutHDMI3_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI3"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="cboxAudOutHDMI3_sky300ActionPerformed"/>
+                      </Events>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cboxAudOutHDMI3_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JLabel" name="labAudOut_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x97f3;&#x9891;&#x8f93;&#x51fa;"/>
+                      </Properties>
+                    </Component>
+                    <Component class="javax.swing.JCheckBox" name="cbocxAudOutHDMI2_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="HDMI2"/>
+                      </Properties>
+                      <AuxValues>
+                        <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="cbocxAudOutHDMI2_sky300.setSelected(true);"/>
+                      </AuxValues>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btnAudOUTApply_sky300">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="&#x5e94;&#x7528;"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAudOUTApply_sky300ActionPerformed"/>
+                      </Events>
+                    </Component>
+                  </SubComponents>
+                </Container>
+              </SubComponents>
             </Container>
           </SubComponents>
         </Container>
@@ -632,17 +1764,247 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="1314" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="ComboboxcallProtocol" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="oppositeIP" min="-2" pref="112" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="comboboxcallRate" min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btncall" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnhangUp" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnstartAssVid" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnstopAssVid" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnoppoStartAssVid" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btnoppoStopAssVid" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="meetingWatcher" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnsingleLoop" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnaudioCheck" alignment="0" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="684" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="oppositeIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btncall" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="comboboxcallRate" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnhangUp" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ComboboxcallProtocol" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnstartAssVid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnstopAssVid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnoppoStartAssVid" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnoppoStopAssVid" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="68" max="-2" attributes="0"/>
+                      <Component id="meetingWatcher" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnsingleLoop" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Component id="btnaudioCheck" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabel19">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x70b9;&#x5bf9;&#x70b9;&#x547c;&#x53eb;"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JFormattedTextField" name="oppositeIP">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="172.16.177.240"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="oppositeIPActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btncall">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x547c;&#x53eb;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btncallActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="comboboxcallRate">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="9">
+                    <StringItem index="0" value="64"/>
+                    <StringItem index="1" value="128"/>
+                    <StringItem index="2" value="256"/>
+                    <StringItem index="3" value="512"/>
+                    <StringItem index="4" value="768"/>
+                    <StringItem index="5" value="1024"/>
+                    <StringItem index="6" value="2048"/>
+                    <StringItem index="7" value="4096"/>
+                    <StringItem index="8" value="8192"/>
+                  </StringArray>
+                </Property>
+                <Property name="selectedIndex" type="int" value="5"/>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="comboboxcallRate.setEditable(false);"/>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnhangUp">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x6302;&#x65ad;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnhangUpActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JComboBox" name="ComboboxcallProtocol">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="2">
+                    <StringItem index="0" value="H323"/>
+                    <StringItem index="1" value="SIP"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="meetingWatcher">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x4f1a;&#x8bae;&#x4fe1;&#x606f;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="meetingWatcherActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnstartAssVid">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x53d1;&#x9001;&#x8f85;&#x6d41;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnstartAssVidActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnstopAssVid">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x505c;&#x6b62;&#x8f85;&#x6d41;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnstopAssVidActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnoppoStartAssVid">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x5bf9;&#x7aef;&#x8f85;&#x6d41;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnoppoStartAssVidActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btnoppoStopAssVid">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x5bf9;&#x7aef;&#x505c;&#x6b62;&#x8f85;&#x6d41;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnoppoStopAssVidActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="btnsingleLoop">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x5f00;&#x59cb;&#x81ea;&#x73af;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="btnsingleLoopStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnsingleLoopActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToggleButton" name="btnaudioCheck">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="&#x5f00;&#x59cb;&#x58f0;&#x573a;&#x68c0;&#x6d4b;"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="btnaudioCheckStateChanged"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnaudioCheckActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
         </Container>
       </SubComponents>
     </Container>
+    <Component class="javax.swing.JLabel" name="labTerminalIP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x7ec8;&#x7aef;IP"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JFormattedTextField" name="terminalIP">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="172.16.177.240"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="terminalIPActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labtelnet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x4e00;&#x952e;&#x6253;&#x5f00;&#x770b;&#x95e8;&#x72d7;,FTP,ssh,logcat&#x8bf7;"/>
+      </Properties>
+    </Component>
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="logArea">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Monospaced" size="14" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="0" green="0" red="99" type="rgb"/>
+            </Property>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_AddingCodePost" type="java.lang.String" value="logArea.setLineWrap(true);&#xa;logArea.setEditable(false);&#xa;logArea.setText(&quot;&#x4ec5;&#x7528;&#x4e8e;&#x65b9;&#x4fbf;&#x6d4b;&#x8bd5;AEC&#x7b49;&#x9700;&#x8981;&#x9891;&#x7e41;&#x5207;&#x6362;&#x89c6;&#x9891;&#x5236;&#x5f0f;&#x7684;&#x573a;&#x666f;&#x65f6;&#x4f7f;&#x7528;&#xff0c;DEMO&#x6216;&#x8bb8;&#x542b;&#x6709;&#x672a;&#x77e5;BUG&#xff0c;&#x65e5;&#x5e38;&#x6d4b;&#x8bd5;&#x8bf7;&#x4f7f;&#x7528;WEBMTC&#x548c;OSD&#x4ee5;&#x53ca;SKYMTC&#x3002;\n&quot;);&#xa;logArea.append(&quot;&#x6ce8;&#x610f;:&#x89c6;&#x9891;&#x77e9;&#x9635;&#x90e8;&#x5206;&#x903b;&#x8f91;&#x8f83;&#x4e3a;&#x590d;&#x6742;,&#x53ef;&#x80fd;&#x6709;&#x903b;&#x8f91;&#x5199;&#x9519;&#x7684;&#x60c5;&#x51b5;,&#x8bbe;&#x7f6e;&#x65f6;&#x8bf7;&#x786e;&#x8ba4;&#x81ea;&#x5df1;&#x8bbe;&#x7f6e;&#x90fd;&#x5bf9;!\n&quot;);&#xa;logArea.append(&quot;&#x591a;&#x89c6;&#x591a;&#x6d41;&#x6682;&#x4e0d;&#x652f;&#x6301;!\n&quot;);"/>
+          </AuxValues>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="btntelnet">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x70b9;&#x6211;&#xff01;"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btntelnetActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="labAlarmInfo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="&#x8bf7;&#x786e;&#x4fdd;&#x8f93;&#x5165;IP&#x6b63;&#x786e;,&#x5426;&#x5219;&#x7a0b;&#x5e8f;&#x5bb9;&#x6613;&#x5931;&#x53bb;&#x54cd;&#x5e94;!&#x66f4;&#x6539;&#x7ec8;&#x7aef;IP&#x5fc5;&#x987b;&#x91cd;&#x65b0;&#x83b7;&#x53d6;&#x7ec8;&#x7aef;&#x7c7b;&#x578b;!"/>
+      </Properties>
+    </Component>
   </SubComponents>
 </Form>

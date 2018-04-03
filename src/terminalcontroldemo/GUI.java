@@ -5,6 +5,15 @@
  */
 package terminalcontroldemo;
 
+import java.util.*;
+import javax.swing.DefaultComboBoxModel;
+import java.awt.Toolkit;
+import static terminalcontroldemo.HttpUtils.httpGet;
+import static terminalcontroldemo.HttpUtils.httpPost;
+import static terminalcontroldemo.TelnetUtil.*;
+import com.google.gson.*;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Administrator
@@ -27,334 +36,1866 @@ public class GUI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        mainTabpanel = new javax.swing.JTabbedPane();
-        settings = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        videoSettings = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        mainVideoPrePAL = new javax.swing.JComboBox<>();
-        assVideoPrePAL = new javax.swing.JComboBox<>();
-        jLabel5 = new javax.swing.JLabel();
-        mainVideoPAL = new javax.swing.JComboBox<>();
-        jLabel6 = new javax.swing.JLabel();
-        assVideoPAL = new javax.swing.JComboBox<>();
-        videoPALApply = new javax.swing.JButton();
+        TabbedPanel = new javax.swing.JTabbedPane();
+        X300 = new javax.swing.JPanel();
+        labVideo_X300 = new javax.swing.JLabel();
+        labAudio_X300 = new javax.swing.JLabel();
+        videoSettings_X300 = new javax.swing.JPanel();
+        labmainVIdpreferPAL_X300 = new javax.swing.JLabel();
+        labassVidPreferPAL_X300 = new javax.swing.JLabel();
+        comboboxmainVideoPrePAL_X300 = new javax.swing.JComboBox<>();
+        comboboxassVideoPrePAL_X300 = new javax.swing.JComboBox<>();
+        labmainVidPAL_X300 = new javax.swing.JLabel();
+        comboboxmainVideoPAL_X300 = new javax.swing.JComboBox<>();
+        labassVidPAL_X300 = new javax.swing.JLabel();
+        comboboxassVideoPAL_X300 = new javax.swing.JComboBox<>();
+        btnvideoPALApply_X300 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JSeparator();
+        labmainVidSource_X300 = new javax.swing.JLabel();
+        comboboxmainVidSource_X300 = new javax.swing.JComboBox<>();
+        labassVidSource_X300 = new javax.swing.JLabel();
+        comboboxassVideoSource_X300 = new javax.swing.JComboBox<>();
+        jSeparator5 = new javax.swing.JSeparator();
+        labVidInType_X300 = new javax.swing.JLabel();
+        comboboxselectVidInput_X300 = new javax.swing.JComboBox<>();
+        labVidOutType_X300 = new javax.swing.JLabel();
+        comboboxselectVidOutput_X300 = new javax.swing.JComboBox<>();
+        btnVidPreeferApply_X300 = new javax.swing.JButton();
+        jSeparator6 = new javax.swing.JSeparator();
+        comboboxVGAOutput_X300 = new javax.swing.JComboBox<>();
+        labVGAOut_X300 = new javax.swing.JLabel();
+        labHDMI2OOut_X300 = new javax.swing.JLabel();
+        labHDMI3Out_X300 = new javax.swing.JLabel();
+        comboboxHDMI2Output_X300 = new javax.swing.JComboBox<>();
+        comboboxHDMI3Output_X300 = new javax.swing.JComboBox<>();
+        btnVidMatrixApply_X300 = new javax.swing.JButton();
+        labmainVidPrefer_X300 = new javax.swing.JLabel();
+        labassVidPrefer_X300 = new javax.swing.JLabel();
+        comboboxMainVidPrefer_X300 = new javax.swing.JComboBox<>();
+        comboboxAssVidPrefer_X300 = new javax.swing.JComboBox<>();
+        btnVidSourceApply_X300 = new javax.swing.JButton();
+        audioSettings_X300 = new javax.swing.JPanel();
+        comboboxAudPrefer_X300 = new javax.swing.JComboBox<>();
+        labAudPrefer_X300 = new javax.swing.JLabel();
+        btnAudPreferApply_X300 = new javax.swing.JButton();
+        panelaudIn_X300 = new javax.swing.JPanel();
+        comboboxAudMIC_X300 = new javax.swing.JComboBox<>();
+        cboxAudInAUX_X300 = new javax.swing.JCheckBox();
+        cboxAudInHDMI_X300 = new javax.swing.JCheckBox();
+        labaudIn_X300 = new javax.swing.JLabel();
+        btnaudIn_X300 = new javax.swing.JButton();
+        panelaudOut_X300 = new javax.swing.JPanel();
+        cboxAudOutAUX__X300 = new javax.swing.JCheckBox();
+        cboxAudOutHDMI3_X300 = new javax.swing.JCheckBox();
+        labAudOut_X300 = new javax.swing.JLabel();
+        cbocxAudOutHDMI2_X300 = new javax.swing.JCheckBox();
+        btnAudOUTApply_X300 = new javax.swing.JButton();
+        SKY300 = new javax.swing.JPanel();
+        labVideo_sky300 = new javax.swing.JLabel();
+        labAudio_sky300 = new javax.swing.JLabel();
+        videoSettings_sky300 = new javax.swing.JPanel();
+        labmainVIdpreferPAL_sky300 = new javax.swing.JLabel();
+        labassVidPreferPAL_sky300 = new javax.swing.JLabel();
+        comboboxmainVideoPrePAL_sky300 = new javax.swing.JComboBox<>();
+        comboboxassVideoPrePAL_sky300 = new javax.swing.JComboBox<>();
+        labmainVidPAL_sky300 = new javax.swing.JLabel();
+        comboboxmainVideoPAL_sky300 = new javax.swing.JComboBox<>();
+        labassVidPAL_sky300 = new javax.swing.JLabel();
+        comboboxassVideoPAL_sky300 = new javax.swing.JComboBox<>();
+        btnvideoPALApply_sky300 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jLabel7 = new javax.swing.JLabel();
-        mainVidSource = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        assVideoSource = new javax.swing.JComboBox<>();
+        labmainVidSource_sky300 = new javax.swing.JLabel();
+        comboboxmainVidSource_sky300 = new javax.swing.JComboBox<>();
+        labassVidSource_sky300 = new javax.swing.JLabel();
+        comboboxassVideoSource_sky300 = new javax.swing.JComboBox<>();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel9 = new javax.swing.JLabel();
-        selectVidInput = new javax.swing.JComboBox<>();
-        jLabel10 = new javax.swing.JLabel();
-        selectVidOutput = new javax.swing.JComboBox<>();
-        VidSourceApply = new javax.swing.JButton();
-        selectVidApply = new javax.swing.JButton();
+        labVidInType_sky300 = new javax.swing.JLabel();
+        comboboxselectVidInput_sky300 = new javax.swing.JComboBox<>();
+        labVidOutType_sky300 = new javax.swing.JLabel();
+        comboboxselectVidOutput_sky300 = new javax.swing.JComboBox<>();
+        btnVidPreeferApply_sky300 = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JSeparator();
-        VGAOutput = new javax.swing.JComboBox<>();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        HDMI2Output = new javax.swing.JComboBox<>();
-        HDMI3Output = new javax.swing.JComboBox<>();
-        VdiMatrixApply = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
+        comboboxVGAOutput_sky300 = new javax.swing.JComboBox<>();
+        labVGAOut_sky300 = new javax.swing.JLabel();
+        labHDMI2OOut_sky300 = new javax.swing.JLabel();
+        labHDMI3Out_sky300 = new javax.swing.JLabel();
+        comboboxHDMI2Output_sky300 = new javax.swing.JComboBox<>();
+        comboboxHDMI3Output_sky300 = new javax.swing.JComboBox<>();
+        btnVidMatrixApply_sky300 = new javax.swing.JButton();
+        labmainVidPrefer_sky300 = new javax.swing.JLabel();
+        labassVidPrefer_sky300 = new javax.swing.JLabel();
+        comboboxMainVidPrefer_sky300 = new javax.swing.JComboBox<>();
+        comboboxAssVidPrefer_sky300 = new javax.swing.JComboBox<>();
+        btnVidSourceApply_sky300 = new javax.swing.JButton();
+        audioSettings_sky300 = new javax.swing.JPanel();
+        comboboxAudPrefer_sky300 = new javax.swing.JComboBox<>();
+        labAudPrefer_sky300 = new javax.swing.JLabel();
+        btnAudPreferApply_sky300 = new javax.swing.JButton();
+        panelaudIn_sky300 = new javax.swing.JPanel();
+        comboboxAudMIC_sky300 = new javax.swing.JComboBox<>();
+        cboxAudInAUX_sky300 = new javax.swing.JCheckBox();
+        cboxAudInHDMI_sky300 = new javax.swing.JCheckBox();
+        labaudIn_sky300 = new javax.swing.JLabel();
+        btnaudIn_sky300 = new javax.swing.JButton();
+        panelaudOut_sky300 = new javax.swing.JPanel();
+        cboxAudOutAUX__sky300 = new javax.swing.JCheckBox();
+        cboxAudOutHDMI3_sky300 = new javax.swing.JCheckBox();
+        labAudOut_sky300 = new javax.swing.JLabel();
+        cbocxAudOutHDMI2_sky300 = new javax.swing.JCheckBox();
+        btnAudOUTApply_sky300 = new javax.swing.JButton();
         function = new javax.swing.JPanel();
+        jLabel19 = new javax.swing.JLabel();
+        oppositeIP = new javax.swing.JFormattedTextField();
+        btncall = new javax.swing.JButton();
+        comboboxcallRate = new javax.swing.JComboBox<>();
+        btnhangUp = new javax.swing.JButton();
+        ComboboxcallProtocol = new javax.swing.JComboBox<>();
+        meetingWatcher = new javax.swing.JToggleButton();
+        btnstartAssVid = new javax.swing.JButton();
+        btnstopAssVid = new javax.swing.JButton();
+        btnoppoStartAssVid = new javax.swing.JButton();
+        btnoppoStopAssVid = new javax.swing.JButton();
+        btnsingleLoop = new javax.swing.JToggleButton();
+        btnaudioCheck = new javax.swing.JToggleButton();
+        labTerminalIP = new javax.swing.JLabel();
+        terminalIP = new javax.swing.JFormattedTextField();
+        labtelnet = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        logArea = new javax.swing.JTextArea();
+        btntelnet = new javax.swing.JButton();
+        labAlarmInfo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setTitle("TerminalControlDEMO");
+        setLocation(new java.awt.Point(5, 5));
         setResizable(false);
-        setSize(new java.awt.Dimension(1280, 720));
+        setSize(new java.awt.Dimension(1280, 800));
 
-        jLabel1.setText("视频设置");
+        TabbedPanel.setToolTipText("TerminalControlDEMO");
+        TabbedPanel.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jLabel2.setText("音频设置");
+        labVideo_X300.setText("视频设置");
 
-        jLabel3.setText("主视频优选分辨率");
+        labAudio_X300.setText("音频设置");
 
-        jLabel4.setText("辅视频优选分辨率");
+        labmainVIdpreferPAL_X300.setText("主视频优选分辨率");
 
-        mainVideoPrePAL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auto", "1080P(1920x1080)", "720P(1280x720)", "W4CIF(1024x576)", "4CIF(704x576)", "WCIF(512x288)", "CIF(352x288)" }));
-        mainVideoPrePAL.setMinimumSize(new java.awt.Dimension(128, 21));
-        mainVideoPrePAL.setPreferredSize(new java.awt.Dimension(128, 21));
-        mainVideoPrePAL.addActionListener(new java.awt.event.ActionListener() {
+        labassVidPreferPAL_X300.setText("辅视频优选分辨率");
+
+        comboboxmainVideoPrePAL_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxmainVideoPrePAL_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxmainVideoPrePAL_X300.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mainVideoPrePALActionPerformed(evt);
+                comboboxmainVideoPrePAL_X300ActionPerformed(evt);
             }
         });
 
-        assVideoPrePAL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auto", "1080P(1920x1080)", "720P(1280x720)", "WSXGA+(1680x1050)", "UXGA(1600x1200)", "WSXGA(1440x900)", "WXGA(1366x768)", "SXGA(1280x1024)", "WXGA(1280x800)", "WXGA(1280x768)", "XGA(1024*768)" }));
+        labmainVidPAL_X300.setText("主视频输出分辨率");
 
-        jLabel5.setText("主视频输出分辨率");
+        labassVidPAL_X300.setText("辅视频输出分辨率");
 
-        mainVideoPAL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1080P_60fps", "1080P_24fps", "1080P_25fps", "1080P_29.97fps", "1080P_30fps", "1080P_50fps", "1080P_59.94fps", "UXGA(1600×1200)_60Hz", "WSXGA+(1680×1050)_60Hz", "SXGA(1280×1024)_60Hz", "WSXGA(1440×900)_60Hz", "720P_50fps", "720P_60fps", "XGA(1024×768)_60Hz", "XGA(1024×768)_75Hz", "WXGA(1366×768)_60Hz", "WXGA(1280×800)_60Hz" }));
+        btnvideoPALApply_X300.setText("应用");
+        btnvideoPALApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvideoPALApply_X300ActionPerformed(evt);
+            }
+        });
 
-        jLabel6.setText("辅视频输出分辨率");
+        labmainVidSource_X300.setText("主视频源");
 
-        assVideoPAL.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Auto", "1080P_60fps", "1080P_24fps", "1080P_25fps", "1080P_29.97fps", "1080P_30fps", "1080P_50fps", "1080P_59.94fps", "UXGA(1600×1200)_60Hz", "WSXGA+(1680×1050)_60Hz", "SXGA(1280×1024)_60Hz", "WSXGA(1440×900)_60Hz", "720P_50fps", "720P_60fps", "XGA(1024×768)_60Hz", "XGA(1024×768)_75Hz", "WXGA(1366×768)_60Hz", "WXGA(1280×800)_60Hz" }));
+        comboboxmainVidSource_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "内置摄像机" }));
+        comboboxmainVidSource_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxmainVidSource_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        videoPALApply.setText("应用");
+        labassVidSource_X300.setText("辅视频源");
 
-        jLabel7.setText("主视频源");
+        comboboxassVideoSource_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA/YPbPr_1", "HDMI_1" }));
+        comboboxassVideoSource_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxassVideoSource_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        mainVidSource.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "内置摄像机" }));
-        mainVidSource.setMinimumSize(new java.awt.Dimension(128, 21));
-        mainVidSource.setPreferredSize(new java.awt.Dimension(128, 21));
+        labVidInType_X300.setText("输入:VGA/YpbPr_1");
 
-        jLabel8.setText("辅视频源");
+        comboboxselectVidInput_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
+        comboboxselectVidInput_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidInput_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        assVideoSource.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA/YPbPr_1", "HDMI_1" }));
-        assVideoSource.setMinimumSize(new java.awt.Dimension(128, 21));
-        assVideoSource.setPreferredSize(new java.awt.Dimension(128, 21));
+        labVidOutType_X300.setText("输出:VGA/YpbPr_1");
 
-        jLabel9.setText("输入:VGA/YpbPr_1");
+        comboboxselectVidOutput_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
+        comboboxselectVidOutput_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidOutput_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidOutput_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxselectVidOutput_X300ActionPerformed(evt);
+            }
+        });
 
-        selectVidInput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
-        selectVidInput.setMinimumSize(new java.awt.Dimension(128, 21));
-        selectVidInput.setPreferredSize(new java.awt.Dimension(128, 21));
+        btnVidPreeferApply_X300.setText("应用");
+        btnVidPreeferApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidPreeferApply_X300ActionPerformed(evt);
+            }
+        });
 
-        jLabel10.setText("输出:VGA/YpbPr_1");
+        comboboxVGAOutput_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "无输出", "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxVGAOutput_X300.setAutoscrolls(true);
+        comboboxVGAOutput_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxVGAOutput_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        selectVidOutput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
-        selectVidOutput.setMinimumSize(new java.awt.Dimension(128, 21));
-        selectVidOutput.setPreferredSize(new java.awt.Dimension(128, 21));
+        labVGAOut_X300.setText("VGA/YpbPr_1");
 
-        VidSourceApply.setText("应用");
+        labHDMI2OOut_X300.setText("HDMI_2");
 
-        selectVidApply.setText("应用");
+        labHDMI3Out_X300.setText("HDMI_3");
 
-        VGAOutput.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "无输出", "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
-        VGAOutput.setAutoscrolls(true);
-        VGAOutput.setMinimumSize(new java.awt.Dimension(128, 21));
-        VGAOutput.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxHDMI2Output_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxHDMI2Output_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxHDMI2Output_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        jLabel11.setText("VGA/YpbPr_1");
+        comboboxHDMI3Output_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxHDMI3Output_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxHDMI3Output_X300.setPreferredSize(new java.awt.Dimension(128, 21));
 
-        jLabel12.setText("HDMI_2");
+        btnVidMatrixApply_X300.setText("应用");
+        btnVidMatrixApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidMatrixApply_X300ActionPerformed(evt);
+            }
+        });
 
-        jLabel13.setText("HDMI_3");
+        labmainVidPrefer_X300.setText("主视频优选");
 
-        HDMI2Output.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
-        HDMI2Output.setMinimumSize(new java.awt.Dimension(128, 21));
-        HDMI2Output.setPreferredSize(new java.awt.Dimension(128, 21));
+        labassVidPrefer_X300.setText("辅视频优选");
 
-        HDMI3Output.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
-        HDMI3Output.setMinimumSize(new java.awt.Dimension(128, 21));
-        HDMI3Output.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxMainVidPrefer_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxMainVidPrefer_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxMainVidPrefer_X300.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxMainVidPrefer_X300ItemStateChanged(evt);
+            }
+        });
 
-        VdiMatrixApply.setText("应用");
+        comboboxAssVidPrefer_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxAssVidPrefer_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxAssVidPrefer_X300.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxAssVidPrefer_X300ItemStateChanged(evt);
+            }
+        });
 
-        javax.swing.GroupLayout videoSettingsLayout = new javax.swing.GroupLayout(videoSettings);
-        videoSettings.setLayout(videoSettingsLayout);
-        videoSettingsLayout.setHorizontalGroup(
-            videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(videoSettingsLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(videoSettingsLayout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addGap(18, 18, 18)
-                        .addComponent(selectVidOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(222, 222, 222)
-                        .addComponent(selectVidApply))
-                    .addGroup(videoSettingsLayout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(selectVidInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(videoSettingsLayout.createSequentialGroup()
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(mainVideoPrePAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(assVideoPrePAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(27, 27, 27)
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(videoSettingsLayout.createSequentialGroup()
-                                .addComponent(jLabel5)
-                                .addGap(18, 18, 18)
-                                .addComponent(mainVideoPAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(videoSettingsLayout.createSequentialGroup()
-                                .addComponent(jLabel6)
-                                .addGap(18, 18, 18)
-                                .addComponent(assVideoPAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(videoPALApply))))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(videoSettingsLayout.createSequentialGroup()
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(jLabel8))
-                        .addGap(68, 68, 68)
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(videoSettingsLayout.createSequentialGroup()
-                                .addComponent(assVideoSource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(221, 221, 221)
-                                .addComponent(VidSourceApply))
-                            .addComponent(mainVidSource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 959, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(videoSettingsLayout.createSequentialGroup()
-                        .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(videoSettingsLayout.createSequentialGroup()
-                                .addComponent(jLabel13)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(HDMI3Output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(videoSettingsLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(HDMI2Output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, videoSettingsLayout.createSequentialGroup()
-                                .addComponent(jLabel11)
-                                .addGap(48, 48, 48)
-                                .addComponent(VGAOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(228, 228, 228)
-                        .addComponent(VdiMatrixApply)))
-                .addContainerGap(274, Short.MAX_VALUE))
+        btnVidSourceApply_X300.setText("应用");
+        btnVidSourceApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidSourceApply_X300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout videoSettings_X300Layout = new org.jdesktop.layout.GroupLayout(videoSettings_X300);
+        videoSettings_X300.setLayout(videoSettings_X300Layout);
+        videoSettings_X300Layout.setHorizontalGroup(
+            videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(videoSettings_X300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jSeparator4, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1300, Short.MAX_VALUE)
+                    .add(jSeparator5)
+                    .add(jSeparator6)
+                    .add(videoSettings_X300Layout.createSequentialGroup()
+                        .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(videoSettings_X300Layout.createSequentialGroup()
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVidPrefer_X300)
+                                    .add(labassVidPrefer_X300))
+                                .add(51, 51, 51)
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxAssVidPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(comboboxMainVidPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(18, 18, 18)
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVIdpreferPAL_X300)
+                                    .add(labassVidPreferPAL_X300))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(comboboxmainVideoPrePAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(89, 89, 89)
+                                        .add(labmainVidPAL_X300)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(comboboxmainVideoPAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(comboboxassVideoPrePAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(btnVidPreeferApply_X300)
+                                        .add(18, 18, 18)
+                                        .add(labassVidPAL_X300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxassVideoPAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(18, 18, 18)
+                                .add(btnvideoPALApply_X300))
+                            .add(videoSettings_X300Layout.createSequentialGroup()
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVidSource_X300)
+                                    .add(labassVidSource_X300))
+                                .add(68, 68, 68)
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxmainVidSource_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(comboboxassVideoSource_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(btnVidSourceApply_X300))))
+                            .add(videoSettings_X300Layout.createSequentialGroup()
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(labVidInType_X300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxselectVidInput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(labVGAOut_X300))
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(labVidOutType_X300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxselectVidOutput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(labHDMI3Out_X300)
+                                            .add(labHDMI2OOut_X300))))
+                                .add(18, 18, 18)
+                                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxHDMI2Output_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(comboboxVGAOutput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(videoSettings_X300Layout.createSequentialGroup()
+                                        .add(comboboxHDMI3Output_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(45, 45, 45)
+                                        .add(btnVidMatrixApply_X300)))))
+                        .add(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        videoSettingsLayout.setVerticalGroup(
-            videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(videoSettingsLayout.createSequentialGroup()
+        videoSettings_X300Layout.setVerticalGroup(
+            videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(videoSettings_X300Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(mainVideoPrePAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5)
-                    .addComponent(mainVideoPAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(assVideoPrePAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(assVideoPAL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(videoPALApply))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7)
-                    .addComponent(mainVidSource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8)
-                    .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(assVideoSource, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(VidSourceApply)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(selectVidInput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(selectVidOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(selectVidApply))
-                .addGap(10, 10, 10)
-                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel11)
-                    .addComponent(VGAOutput, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel12)
-                    .addComponent(HDMI2Output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(videoSettingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(HDMI3Output, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VdiMatrixApply))
-                .addContainerGap(62, Short.MAX_VALUE))
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(comboboxMainVidPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labmainVidPrefer_X300)
+                    .add(labmainVIdpreferPAL_X300)
+                    .add(comboboxmainVideoPrePAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labmainVidPAL_X300)
+                    .add(comboboxmainVideoPAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labassVidPrefer_X300)
+                    .add(comboboxAssVidPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labassVidPreferPAL_X300)
+                    .add(comboboxassVideoPrePAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnVidPreeferApply_X300)
+                    .add(labassVidPAL_X300)
+                    .add(comboboxassVideoPAL_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnvideoPALApply_X300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labmainVidSource_X300)
+                    .add(comboboxmainVidSource_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labassVidSource_X300)
+                    .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(comboboxassVideoSource_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(btnVidSourceApply_X300)))
+                .add(8, 8, 8)
+                .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labVGAOut_X300)
+                    .add(comboboxVGAOutput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labVidInType_X300)
+                    .add(comboboxselectVidInput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labHDMI2OOut_X300)
+                    .add(comboboxHDMI2Output_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labVidOutType_X300)
+                    .add(comboboxselectVidOutput_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(26, 26, 26)
+                .add(videoSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labHDMI3Out_X300)
+                    .add(comboboxHDMI3Output_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnVidMatrixApply_X300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jSeparator6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 209, Short.MAX_VALUE)
-        );
+        String defaultMain_X300=(String)getVidPrefer("X300","main")[0];
+        comboboxmainVideoPrePAL_X300.setModel(new DefaultComboBoxModel(getVidPAL("X300","main",defaultMain_X300)));
+        String defaultAss_X300=(String)getVidPrefer("X300","ass")[0];
+        comboboxassVideoPrePAL_X300.setModel(new DefaultComboBoxModel(getVidPAL("X300","ass",defaultAss_X300)));
+        comboboxassVideoPrePAL_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxassVideoPrePAL_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+        //sky300ini terminalcontroldemo.Sky300ini = new terminalcontroldemo.Sky300ini();
 
-        javax.swing.GroupLayout settingsLayout = new javax.swing.GroupLayout(settings);
-        settings.setLayout(settingsLayout);
-        settingsLayout.setHorizontalGroup(
-            settingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(settingsLayout.createSequentialGroup()
+        terminalcontroldemo.Sky300ini.mainVidOutPAL.keySet().forEach((key) -> {
+            comboboxmainVideoPAL_sky300.addItem(key.toString());
+        });
+        terminalcontroldemo.Sky300ini.assVidOutPAL.keySet().forEach((key) -> {
+            comboboxassVideoPAL_sky300.addItem(key.toString());
+        });
+        comboboxMainVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer("X300","main")));
+        comboboxAssVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer("X300","ass")));
+
+        comboboxAudPrefer_X300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxAudPrefer_X300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labAudPrefer_X300.setText("优选音频协议");
+
+        btnAudPreferApply_X300.setText("应用");
+        btnAudPreferApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudPreferApply_X300ActionPerformed(evt);
+            }
+        });
+
+        comboboxAudMIC_X300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "卡侬MIC", "数字MIC", "无线MIC", "内置MIC", "无MIC" }));
+
+        cboxAudInAUX_X300.setText("AUX");
+        cboxAudInAUX_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudInAUX_X300ActionPerformed(evt);
+            }
+        });
+
+        cboxAudInHDMI_X300.setText("HDMI");
+
+        labaudIn_X300.setText("音频输入");
+
+        btnaudIn_X300.setText("应用");
+        btnaudIn_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaudIn_X300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout panelaudIn_X300Layout = new org.jdesktop.layout.GroupLayout(panelaudIn_X300);
+        panelaudIn_X300.setLayout(panelaudIn_X300Layout);
+        panelaudIn_X300Layout.setHorizontalGroup(
+            panelaudIn_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudIn_X300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(panelaudIn_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labaudIn_X300)
+                    .add(panelaudIn_X300Layout.createSequentialGroup()
+                        .add(cboxAudInHDMI_X300)
+                        .add(18, 18, 18)
+                        .add(btnaudIn_X300))
+                    .add(cboxAudInAUX_X300)
+                    .add(comboboxAudMIC_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelaudIn_X300Layout.setVerticalGroup(
+            panelaudIn_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudIn_X300Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(settingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(settingsLayout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(settingsLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(videoSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .add(labaudIn_X300)
+                .add(12, 12, 12)
+                .add(comboboxAudMIC_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(cboxAudInAUX_X300)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelaudIn_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cboxAudInHDMI_X300)
+                    .add(btnaudIn_X300))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        settingsLayout.setVerticalGroup(
-            settingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(settingsLayout.createSequentialGroup()
+
+        cboxAudInAUX_sky300.setSelected(true);
+        cboxAudInHDMI_sky300.setSelected(true);
+
+        cboxAudOutAUX__X300.setText("AUX");
+        cboxAudOutAUX__X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudOutAUX__X300ActionPerformed(evt);
+            }
+        });
+
+        cboxAudOutHDMI3_X300.setText("HDMI3");
+        cboxAudOutHDMI3_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudOutHDMI3_X300ActionPerformed(evt);
+            }
+        });
+
+        labAudOut_X300.setText("音频输出");
+
+        cbocxAudOutHDMI2_X300.setText("HDMI2");
+
+        btnAudOUTApply_X300.setText("应用");
+        btnAudOUTApply_X300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudOUTApply_X300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout panelaudOut_X300Layout = new org.jdesktop.layout.GroupLayout(panelaudOut_X300);
+        panelaudOut_X300.setLayout(panelaudOut_X300Layout);
+        panelaudOut_X300Layout.setHorizontalGroup(
+            panelaudOut_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudOut_X300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(panelaudOut_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labAudOut_X300)
+                    .add(panelaudOut_X300Layout.createSequentialGroup()
+                        .add(cboxAudOutHDMI3_X300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(btnAudOUTApply_X300))
+                    .add(cboxAudOutAUX__X300)
+                    .add(cbocxAudOutHDMI2_X300))
+                .addContainerGap())
+        );
+        panelaudOut_X300Layout.setVerticalGroup(
+            panelaudOut_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudOut_X300Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(settingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(videoSettings, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(settingsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18))
+                .add(labAudOut_X300)
+                .add(14, 14, 14)
+                .add(cboxAudOutAUX__X300)
+                .add(4, 4, 4)
+                .add(cbocxAudOutHDMI2_X300)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelaudOut_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cboxAudOutHDMI3_X300)
+                    .add(btnAudOUTApply_X300))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
-        mainTabpanel.addTab("设置", settings);
+        cboxAudOutAUX__sky300.setSelected(true);
+        cboxAudOutHDMI3_sky300.setSelected(true);
+        cbocxAudOutHDMI2_sky300.setSelected(true);
 
-        javax.swing.GroupLayout functionLayout = new javax.swing.GroupLayout(function);
+        org.jdesktop.layout.GroupLayout audioSettings_X300Layout = new org.jdesktop.layout.GroupLayout(audioSettings_X300);
+        audioSettings_X300.setLayout(audioSettings_X300Layout);
+        audioSettings_X300Layout.setHorizontalGroup(
+            audioSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(audioSettings_X300Layout.createSequentialGroup()
+                .add(audioSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(audioSettings_X300Layout.createSequentialGroup()
+                        .add(19, 19, 19)
+                        .add(labAudPrefer_X300)
+                        .add(40, 40, 40)
+                        .add(comboboxAudPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(btnAudPreferApply_X300))
+                    .add(audioSettings_X300Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(panelaudIn_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(panelaudOut_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        audioSettings_X300Layout.setVerticalGroup(
+            audioSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(audioSettings_X300Layout.createSequentialGroup()
+                .add(22, 22, 22)
+                .add(audioSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labAudPrefer_X300)
+                    .add(comboboxAudPrefer_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnAudPreferApply_X300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(audioSettings_X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(panelaudOut_X300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(panelaudIn_X300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(0, 0, Short.MAX_VALUE))
+        );
+
+        terminalcontroldemo.Sky300ini.AudPrefer.keySet().forEach((key) -> {
+            comboboxAudPrefer_sky300.addItem(key.toString());
+        });
+
+        org.jdesktop.layout.GroupLayout X300Layout = new org.jdesktop.layout.GroupLayout(X300);
+        X300.setLayout(X300Layout);
+        X300Layout.setHorizontalGroup(
+            X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(X300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(X300Layout.createSequentialGroup()
+                        .add(labVideo_X300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(videoSettings_X300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(X300Layout.createSequentialGroup()
+                        .add(labAudio_X300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(audioSettings_X300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .add(10, 10, 10))
+        );
+        X300Layout.setVerticalGroup(
+            X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(X300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labVideo_X300)
+                    .add(videoSettings_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 317, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(X300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labAudio_X300)
+                    .add(audioSettings_X300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 166, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(209, 209, 209))
+        );
+
+        TabbedPanel.addTab("X300", X300);
+
+        labVideo_sky300.setText("视频设置");
+
+        labAudio_sky300.setText("音频设置");
+
+        labmainVIdpreferPAL_sky300.setText("主视频优选分辨率");
+
+        labassVidPreferPAL_sky300.setText("辅视频优选分辨率");
+
+        comboboxmainVideoPrePAL_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxmainVideoPrePAL_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxmainVideoPrePAL_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxmainVideoPrePAL_sky300ActionPerformed(evt);
+            }
+        });
+
+        labmainVidPAL_sky300.setText("主视频输出分辨率");
+
+        labassVidPAL_sky300.setText("辅视频输出分辨率");
+
+        btnvideoPALApply_sky300.setText("应用");
+        btnvideoPALApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnvideoPALApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        labmainVidSource_sky300.setText("主视频源");
+
+        comboboxmainVidSource_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "内置摄像机" }));
+        comboboxmainVidSource_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxmainVidSource_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labassVidSource_sky300.setText("辅视频源");
+
+        comboboxassVideoSource_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA/YPbPr_1", "HDMI_1" }));
+        comboboxassVideoSource_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxassVideoSource_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labVidInType_sky300.setText("输入:VGA/YpbPr_1");
+
+        comboboxselectVidInput_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
+        comboboxselectVidInput_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidInput_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labVidOutType_sky300.setText("输出:VGA/YpbPr_1");
+
+        comboboxselectVidOutput_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "VGA", "YPbPr_1" }));
+        comboboxselectVidOutput_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidOutput_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxselectVidOutput_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboboxselectVidOutput_sky300ActionPerformed(evt);
+            }
+        });
+
+        btnVidPreeferApply_sky300.setText("应用");
+        btnVidPreeferApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidPreeferApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        comboboxVGAOutput_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "无输出", "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxVGAOutput_sky300.setAutoscrolls(true);
+        comboboxVGAOutput_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxVGAOutput_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labVGAOut_sky300.setText("VGA/YpbPr_1");
+
+        labHDMI2OOut_sky300.setText("HDMI_2");
+
+        labHDMI3Out_sky300.setText("HDMI_3");
+
+        comboboxHDMI2Output_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxHDMI2Output_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxHDMI2Output_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        comboboxHDMI3Output_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "主视频", "辅视频", "VGA/YPbPr_1", "内置摄像机" }));
+        comboboxHDMI3Output_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxHDMI3Output_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        btnVidMatrixApply_sky300.setText("应用");
+        btnVidMatrixApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidMatrixApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        labmainVidPrefer_sky300.setText("主视频优选");
+
+        labassVidPrefer_sky300.setText("辅视频优选");
+
+        comboboxMainVidPrefer_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxMainVidPrefer_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxMainVidPrefer_sky300.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxMainVidPrefer_sky300ItemStateChanged(evt);
+            }
+        });
+
+        comboboxAssVidPrefer_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxAssVidPrefer_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+        comboboxAssVidPrefer_sky300.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                comboboxAssVidPrefer_sky300ItemStateChanged(evt);
+            }
+        });
+
+        btnVidSourceApply_sky300.setText("应用");
+        btnVidSourceApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnVidSourceApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout videoSettings_sky300Layout = new org.jdesktop.layout.GroupLayout(videoSettings_sky300);
+        videoSettings_sky300.setLayout(videoSettings_sky300Layout);
+        videoSettings_sky300Layout.setHorizontalGroup(
+            videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(videoSettings_sky300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 1291, Short.MAX_VALUE)
+                    .add(jSeparator2)
+                    .add(jSeparator3)
+                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                        .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(videoSettings_sky300Layout.createSequentialGroup()
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVidPrefer_sky300)
+                                    .add(labassVidPrefer_sky300))
+                                .add(51, 51, 51)
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxAssVidPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(comboboxMainVidPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(18, 18, 18)
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVIdpreferPAL_sky300)
+                                    .add(labassVidPreferPAL_sky300))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(comboboxmainVideoPrePAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(89, 89, 89)
+                                        .add(labmainVidPAL_sky300)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(comboboxmainVideoPAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(comboboxassVideoPrePAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 128, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(btnVidPreeferApply_sky300)
+                                        .add(18, 18, 18)
+                                        .add(labassVidPAL_sky300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxassVideoPAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(18, 18, 18)
+                                .add(btnvideoPALApply_sky300))
+                            .add(videoSettings_sky300Layout.createSequentialGroup()
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(labmainVidSource_sky300)
+                                    .add(labassVidSource_sky300))
+                                .add(68, 68, 68)
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxmainVidSource_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(comboboxassVideoSource_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                        .add(btnVidSourceApply_sky300))))
+                            .add(videoSettings_sky300Layout.createSequentialGroup()
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(labVidInType_sky300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxselectVidInput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(labVGAOut_sky300))
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(labVidOutType_sky300)
+                                        .add(18, 18, 18)
+                                        .add(comboboxselectVidOutput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(labHDMI3Out_sky300)
+                                            .add(labHDMI2OOut_sky300))))
+                                .add(18, 18, 18)
+                                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(comboboxHDMI2Output_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(comboboxVGAOutput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(videoSettings_sky300Layout.createSequentialGroup()
+                                        .add(comboboxHDMI3Output_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(45, 45, 45)
+                                        .add(btnVidMatrixApply_sky300)))))
+                        .add(0, 0, Short.MAX_VALUE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        videoSettings_sky300Layout.setVerticalGroup(
+            videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(videoSettings_sky300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(comboboxMainVidPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labmainVidPrefer_sky300)
+                    .add(labmainVIdpreferPAL_sky300)
+                    .add(comboboxmainVideoPrePAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labmainVidPAL_sky300)
+                    .add(comboboxmainVideoPAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labassVidPrefer_sky300)
+                    .add(comboboxAssVidPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labassVidPreferPAL_sky300)
+                    .add(comboboxassVideoPrePAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnVidPreeferApply_sky300)
+                    .add(labassVidPAL_sky300)
+                    .add(comboboxassVideoPAL_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnvideoPALApply_sky300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labmainVidSource_sky300)
+                    .add(comboboxmainVidSource_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labassVidSource_sky300)
+                    .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(comboboxassVideoSource_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(btnVidSourceApply_sky300)))
+                .add(8, 8, 8)
+                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labVGAOut_sky300)
+                    .add(comboboxVGAOutput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labVidInType_sky300)
+                    .add(comboboxselectVidInput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(18, 18, 18)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labHDMI2OOut_sky300)
+                    .add(comboboxHDMI2Output_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(labVidOutType_sky300)
+                    .add(comboboxselectVidOutput_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(26, 26, 26)
+                .add(videoSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labHDMI3Out_sky300)
+                    .add(comboboxHDMI3Output_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnVidMatrixApply_sky300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 12, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        String defaultMain_sky300=(String)getVidPrefer("sky300","main")[0];
+        comboboxmainVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(getVidPAL("sky300","main",defaultMain_sky300)));
+        String defaultAss_sky300=(String)getVidPrefer("sky300","ass")[0];
+        comboboxassVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(getVidPAL("sky300","ass",defaultAss_sky300)));
+        comboboxassVideoPrePAL_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxassVideoPrePAL_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+        //sky300ini terminalcontroldemo.Sky300ini = new terminalcontroldemo.Sky300ini();
+
+        terminalcontroldemo.Sky300ini.mainVidOutPAL.keySet().forEach((key) -> {
+            comboboxmainVideoPAL_sky300.addItem(key.toString());
+        });
+        terminalcontroldemo.Sky300ini.assVidOutPAL.keySet().forEach((key) -> {
+            comboboxassVideoPAL_sky300.addItem(key.toString());
+        });
+        comboboxMainVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer("sky300","main")));
+        comboboxAssVidPrefer_sky300.setModel(new DefaultComboBoxModel(getVidPrefer("sky300","ass")));
+
+        comboboxAudPrefer_sky300.setMinimumSize(new java.awt.Dimension(128, 21));
+        comboboxAudPrefer_sky300.setPreferredSize(new java.awt.Dimension(128, 21));
+
+        labAudPrefer_sky300.setText("优选音频协议");
+
+        btnAudPreferApply_sky300.setText("应用");
+        btnAudPreferApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudPreferApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        comboboxAudMIC_sky300.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "卡侬MIC", "数字MIC", "无线MIC", "内置MIC", "无MIC" }));
+
+        cboxAudInAUX_sky300.setText("AUX");
+        cboxAudInAUX_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudInAUX_sky300ActionPerformed(evt);
+            }
+        });
+
+        cboxAudInHDMI_sky300.setText("HDMI");
+
+        labaudIn_sky300.setText("音频输入");
+
+        btnaudIn_sky300.setText("应用");
+        btnaudIn_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaudIn_sky300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout panelaudIn_sky300Layout = new org.jdesktop.layout.GroupLayout(panelaudIn_sky300);
+        panelaudIn_sky300.setLayout(panelaudIn_sky300Layout);
+        panelaudIn_sky300Layout.setHorizontalGroup(
+            panelaudIn_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudIn_sky300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(panelaudIn_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labaudIn_sky300)
+                    .add(panelaudIn_sky300Layout.createSequentialGroup()
+                        .add(cboxAudInHDMI_sky300)
+                        .add(18, 18, 18)
+                        .add(btnaudIn_sky300))
+                    .add(cboxAudInAUX_sky300)
+                    .add(comboboxAudMIC_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        panelaudIn_sky300Layout.setVerticalGroup(
+            panelaudIn_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudIn_sky300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(labaudIn_sky300)
+                .add(12, 12, 12)
+                .add(comboboxAudMIC_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(cboxAudInAUX_sky300)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelaudIn_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cboxAudInHDMI_sky300)
+                    .add(btnaudIn_sky300))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        cboxAudInAUX_sky300.setSelected(true);
+        cboxAudInHDMI_sky300.setSelected(true);
+
+        cboxAudOutAUX__sky300.setText("AUX");
+        cboxAudOutAUX__sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudOutAUX__sky300ActionPerformed(evt);
+            }
+        });
+
+        cboxAudOutHDMI3_sky300.setText("HDMI3");
+        cboxAudOutHDMI3_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cboxAudOutHDMI3_sky300ActionPerformed(evt);
+            }
+        });
+
+        labAudOut_sky300.setText("音频输出");
+
+        cbocxAudOutHDMI2_sky300.setText("HDMI2");
+
+        btnAudOUTApply_sky300.setText("应用");
+        btnAudOUTApply_sky300.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAudOUTApply_sky300ActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout panelaudOut_sky300Layout = new org.jdesktop.layout.GroupLayout(panelaudOut_sky300);
+        panelaudOut_sky300.setLayout(panelaudOut_sky300Layout);
+        panelaudOut_sky300Layout.setHorizontalGroup(
+            panelaudOut_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudOut_sky300Layout.createSequentialGroup()
+                .add(19, 19, 19)
+                .add(panelaudOut_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labAudOut_sky300)
+                    .add(panelaudOut_sky300Layout.createSequentialGroup()
+                        .add(cboxAudOutHDMI3_sky300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(btnAudOUTApply_sky300))
+                    .add(cboxAudOutAUX__sky300)
+                    .add(cbocxAudOutHDMI2_sky300))
+                .addContainerGap())
+        );
+        panelaudOut_sky300Layout.setVerticalGroup(
+            panelaudOut_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(panelaudOut_sky300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(labAudOut_sky300)
+                .add(14, 14, 14)
+                .add(cboxAudOutAUX__sky300)
+                .add(4, 4, 4)
+                .add(cbocxAudOutHDMI2_sky300)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(panelaudOut_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(cboxAudOutHDMI3_sky300)
+                    .add(btnAudOUTApply_sky300))
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        cboxAudOutAUX__sky300.setSelected(true);
+        cboxAudOutHDMI3_sky300.setSelected(true);
+        cbocxAudOutHDMI2_sky300.setSelected(true);
+
+        org.jdesktop.layout.GroupLayout audioSettings_sky300Layout = new org.jdesktop.layout.GroupLayout(audioSettings_sky300);
+        audioSettings_sky300.setLayout(audioSettings_sky300Layout);
+        audioSettings_sky300Layout.setHorizontalGroup(
+            audioSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(audioSettings_sky300Layout.createSequentialGroup()
+                .add(audioSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(audioSettings_sky300Layout.createSequentialGroup()
+                        .add(19, 19, 19)
+                        .add(labAudPrefer_sky300)
+                        .add(40, 40, 40)
+                        .add(comboboxAudPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(btnAudPreferApply_sky300))
+                    .add(audioSettings_sky300Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .add(panelaudIn_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(18, 18, 18)
+                        .add(panelaudOut_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        audioSettings_sky300Layout.setVerticalGroup(
+            audioSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(audioSettings_sky300Layout.createSequentialGroup()
+                .add(22, 22, 22)
+                .add(audioSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(labAudPrefer_sky300)
+                    .add(comboboxAudPrefer_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnAudPreferApply_sky300))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(audioSettings_sky300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(panelaudOut_sky300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(panelaudIn_sky300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .add(0, 0, Short.MAX_VALUE))
+        );
+
+        terminalcontroldemo.Sky300ini.AudPrefer.keySet().forEach((key) -> {
+            comboboxAudPrefer_sky300.addItem(key.toString());
+        });
+
+        org.jdesktop.layout.GroupLayout SKY300Layout = new org.jdesktop.layout.GroupLayout(SKY300);
+        SKY300.setLayout(SKY300Layout);
+        SKY300Layout.setHorizontalGroup(
+            SKY300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SKY300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(SKY300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(SKY300Layout.createSequentialGroup()
+                        .add(labVideo_sky300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(videoSettings_sky300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(SKY300Layout.createSequentialGroup()
+                        .add(labAudio_sky300)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(audioSettings_sky300, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .add(10, 10, 10))
+        );
+        SKY300Layout.setVerticalGroup(
+            SKY300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(SKY300Layout.createSequentialGroup()
+                .addContainerGap()
+                .add(SKY300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labVideo_sky300)
+                    .add(videoSettings_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 317, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(SKY300Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(labAudio_sky300)
+                    .add(audioSettings_sky300, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 166, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(209, 209, 209))
+        );
+
+        TabbedPanel.addTab("Sky300", SKY300);
+
+        jLabel19.setText("点对点呼叫");
+
+        oppositeIP.setText("172.16.177.240");
+        oppositeIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                oppositeIPActionPerformed(evt);
+            }
+        });
+
+        btncall.setText("呼叫");
+        btncall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btncallActionPerformed(evt);
+            }
+        });
+
+        comboboxcallRate.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "64", "128", "256", "512", "768", "1024", "2048", "4096", "8192" }));
+        comboboxcallRate.setSelectedIndex(5);
+
+        btnhangUp.setText("挂断");
+        btnhangUp.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnhangUpActionPerformed(evt);
+            }
+        });
+
+        ComboboxcallProtocol.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "H323", "SIP" }));
+
+        meetingWatcher.setText("会议信息");
+        meetingWatcher.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                meetingWatcherActionPerformed(evt);
+            }
+        });
+
+        btnstartAssVid.setText("发送辅流");
+        btnstartAssVid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnstartAssVidActionPerformed(evt);
+            }
+        });
+
+        btnstopAssVid.setText("停止辅流");
+        btnstopAssVid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnstopAssVidActionPerformed(evt);
+            }
+        });
+
+        btnoppoStartAssVid.setText("对端辅流");
+        btnoppoStartAssVid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnoppoStartAssVidActionPerformed(evt);
+            }
+        });
+
+        btnoppoStopAssVid.setText("对端停止辅流");
+        btnoppoStopAssVid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnoppoStopAssVidActionPerformed(evt);
+            }
+        });
+
+        btnsingleLoop.setText("开始自环");
+        btnsingleLoop.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                btnsingleLoopStateChanged(evt);
+            }
+        });
+        btnsingleLoop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnsingleLoopActionPerformed(evt);
+            }
+        });
+
+        btnaudioCheck.setText("开始声场检测");
+        btnaudioCheck.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                btnaudioCheckStateChanged(evt);
+            }
+        });
+        btnaudioCheck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnaudioCheckActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout functionLayout = new org.jdesktop.layout.GroupLayout(function);
         function.setLayout(functionLayout);
         functionLayout.setHorizontalGroup(
-            functionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1314, Short.MAX_VALUE)
+            functionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(functionLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(jLabel19)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(ComboboxcallProtocol, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(oppositeIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(comboboxcallRate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btncall)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btnhangUp)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(btnstartAssVid)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(btnstopAssVid)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(btnoppoStartAssVid)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(btnoppoStopAssVid)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(functionLayout.createSequentialGroup()
+                .add(functionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(meetingWatcher)
+                    .add(btnsingleLoop)
+                    .add(btnaudioCheck))
+                .add(0, 0, Short.MAX_VALUE))
         );
         functionLayout.setVerticalGroup(
-            functionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 684, Short.MAX_VALUE)
+            functionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(functionLayout.createSequentialGroup()
+                .addContainerGap()
+                .add(functionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(jLabel19)
+                    .add(oppositeIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btncall)
+                    .add(comboboxcallRate, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnhangUp)
+                    .add(ComboboxcallProtocol, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnstartAssVid)
+                    .add(btnstopAssVid)
+                    .add(btnoppoStartAssVid)
+                    .add(btnoppoStopAssVid))
+                .add(68, 68, 68)
+                .add(meetingWatcher)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btnsingleLoop)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btnaudioCheck)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        mainTabpanel.addTab("功能", function);
+        comboboxcallRate.setEditable(false);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        TabbedPanel.addTab("功能", function);
+
+        labTerminalIP.setText("终端IP");
+
+        terminalIP.setText("172.16.177.240");
+        terminalIP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                terminalIPActionPerformed(evt);
+            }
+        });
+
+        labtelnet.setText("一键打开看门狗,FTP,ssh,logcat请");
+
+        logArea.setColumns(20);
+        logArea.setFont(new java.awt.Font("Monospaced", 0, 14)); // NOI18N
+        logArea.setForeground(new java.awt.Color(153, 0, 0));
+        logArea.setRows(5);
+        jScrollPane1.setViewportView(logArea);
+        logArea.setLineWrap(true);
+        logArea.setEditable(false);
+        logArea.setText("仅用于方便测试AEC等需要频繁切换视频制式的场景时使用，DEMO或许含有未知BUG，日常测试请使用WEBMTC和OSD以及SKYMTC。\n");
+        logArea.append("注意:视频矩阵部分逻辑较为复杂,可能有逻辑写错的情况,设置时请确认自己设置都对!\n");
+        logArea.append("多视多流暂不支持!\n");
+
+        btntelnet.setText("点我！");
+        btntelnet.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btntelnetActionPerformed(evt);
+            }
+        });
+
+        labAlarmInfo.setText("请确保输入IP正确,否则程序容易失去响应!更改终端IP必须重新获取终端类型!");
+
+        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainTabpanel)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createSequentialGroup()
+                        .add(10, 10, 10)
+                        .add(jScrollPane1))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, TabbedPanel)
+                    .add(layout.createSequentialGroup()
+                        .add(labTerminalIP)
+                        .add(18, 18, 18)
+                        .add(terminalIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 98, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(141, 141, 141)
+                        .add(labAlarmInfo)
+                        .add(441, 441, 441)
+                        .add(labtelnet)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(btntelnet)
+                        .add(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(mainTabpanel)
-                .addContainerGap())
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(labTerminalIP)
+                        .add(terminalIP, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(labAlarmInfo))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(labtelnet)
+                        .add(btntelnet)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(TabbedPanel, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 535, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 206, Short.MAX_VALUE)
+                .add(14, 14, 14))
         );
 
-        mainTabpanel.getAccessibleContext().setAccessibleName("tab2");
+        TabbedPanel.getAccessibleContext().setAccessibleName("");
+        for (int tab=0;tab<(TabbedPanel.getTabCount()-1);tab++){
+            TabbedPanel.setEnabledAt(tab, false);
+        }
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void mainVideoPrePALActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mainVideoPrePALActionPerformed
+    private void comboboxmainVideoPrePAL_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxmainVideoPrePAL_sky300ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_mainVideoPrePALActionPerformed
+    }//GEN-LAST:event_comboboxmainVideoPrePAL_sky300ActionPerformed
+
+    private void btnVidMatrixApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidMatrixApply_sky300ActionPerformed
+        String strVGAout = Sky300ini.VGAout.get((String) comboboxVGAOutput_sky300.getSelectedItem());
+        String strHDMI2out = Sky300ini.HDMI1out.get((String) comboboxHDMI2Output_sky300.getSelectedItem());
+        String strHDMI3out = Sky300ini.HDMI2out.get((String) comboboxHDMI3Output_sky300.getSelectedItem());
+        if ((String) comboboxVGAOutput_sky300.getSelectedItem() == "VGA/YPbPr_1" && (String) comboboxHDMI2Output_sky300.getSelectedItem() == "辅视频"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI2Output_sky300.getSelectedItem() == "VGA/YPbPr_1"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "VGA/YPbPr_1" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "辅视频"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "VGA/YPbPr_1"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "HDMI_1" && (String) comboboxHDMI2Output_sky300.getSelectedItem() == "辅视频"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI2Output_sky300.getSelectedItem() == "HDMI_1"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "HDMI_1" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "辅视频"
+                || (String) comboboxVGAOutput_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "HDMI_1"
+                || (String) comboboxHDMI2Output_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "HDMI_1"
+                || (String) comboboxHDMI2Output_sky300.getSelectedItem() == "HDMI_1" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "辅视频"
+                || (String) comboboxHDMI2Output_sky300.getSelectedItem() == "辅视频" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "VGA/YPbPr_1"
+                || (String) comboboxHDMI2Output_sky300.getSelectedItem() == "VGA/YPbPr_1" && (String) comboboxHDMI3Output_sky300.getSelectedItem() == "辅视频") {
+
+            logArea.setText("非法矩阵!");
+        } else if ((String) comboboxVGAOutput_sky300.getSelectedItem() != "主视频" && (String) comboboxHDMI2Output_sky300.getSelectedItem() != "主视频" && (String) comboboxHDMI3Output_sky300.getSelectedItem() != "主视频") {
+            logArea.setText("必须有一个输出主视频!");
+        } else {
+            String tail = ", { \"achSchemeName\": \"----1----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 1 }, { \"achSchemeName\": \"----2----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 2 }, { \"achSchemeName\": \"----3----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 3 }, { \"achSchemeName\": \"----4----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 4 }, { \"achSchemeName\": \"----5----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 5 }, { \"achSchemeName\": \"----6----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 6 }, { \"achSchemeName\": \"----7----\", \"atInPortMode\": [ { \"emInPortMode\": 5, \"emVideoInPort\": 15 } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": 3 }, { \"emVideoOutPort\": 6, \"emVideoOutType\": 1 }, { \"emVideoOutPort\": 5, \"emVideoOutType\": 1 } ], \"atOutPortMode\": [ { \"emOutPortMode\": 5, \"emVideoOutPort\": 13 } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 7 } ], \"byCnt\": 8, \"dwSchemeID\": 0 }";
+            String payload = "{ \"head\": { \"sessionid\": \"undefined\", \"userid\": \"\", \"freeloginuser\":true, \"seqid\": null }, \"body\": { \"atMatrixScheme\": [ { \"achSchemeName\": \"----0----\", \"atInPortMode\": [ { \"emVideoInPort\": 15, \"emInPortMode\": " + comboboxselectVidInput_sky300.getSelectedItem().toString().replaceAll("VGA", "5").replaceAll("YPbPr_1", "4") + " } ], \"atOutPort2InPort\": [ { \"emVideoOutPort\": 13, \"emVideoOutType\": " + strVGAout + " }, { \"emVideoOutPort\": 6, \"emVideoOutType\": " + strHDMI3out + " }, { \"emVideoOutPort\": 5, \"emVideoOutType\": " + strHDMI2out + " } ], \"atOutPortMode\": [ { \"emVideoOutPort\": 13, \"emOutPortMode\": " + comboboxselectVidOutput_sky300.getSelectedItem().toString().replaceAll("VGA", "5").replaceAll("YPbPr_1", "4") + " } ], \"byInPortCnt\": 1, \"byOutPort2InPortCnt\": 3, \"byOutPortCnt\": 1, \"dwSchemeID\": 0 }" + tail;
+            String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/videomatrixscheme";
+
+            String result = httpPost(URL, payload);
+            logArea.setText("URL: " + URL + "\n");
+            logArea.append("Payload: " + payload + "\n\n");
+            logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+            logArea.append(result.replaceAll("\n", "").replaceAll("\\s*", ""));
+
+        }
+
+    }//GEN-LAST:event_btnVidMatrixApply_sky300ActionPerformed
+
+    private void terminalIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_terminalIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_terminalIPActionPerformed
+
+    private void comboboxMainVidPrefer_sky300ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxMainVidPrefer_sky300ItemStateChanged
+        // TODO add your handling code here:
+        itemChange("main");
+    }//GEN-LAST:event_comboboxMainVidPrefer_sky300ItemStateChanged
+
+    private void comboboxAssVidPrefer_sky300ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxAssVidPrefer_sky300ItemStateChanged
+        itemChange("ass");    // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxAssVidPrefer_sky300ItemStateChanged
+
+    private void oppositeIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_oppositeIPActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_oppositeIPActionPerformed
+//呼叫
+    private void btncallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncallActionPerformed
+        String callProtocol = ComboboxcallProtocol.getSelectedIndex() + 1 + "";
+        httpPost("http://" + terminalIP.getText() + "mtapi/cfg/callprotocol", "{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":rue,\"seqid\":null},\"body\":{\"basetype\":" + callProtocol + "}}");
+        //System.out.println(callProtocol);
+
+        String URL = "http://" + terminalIP.getText() + "/mtapi/conf/makecall";
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"param1\":{\"basetype\":\"" + oppositeIP.getText() + "\"},\"param2\":{\"basetype\":" + comboboxcallRate.getSelectedItem() + "},\"param3\":{\"basetype\":" + callProtocol + "}}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+    }//GEN-LAST:event_btncallActionPerformed
+//挂断
+    private void btnhangUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhangUpActionPerformed
+        String URL = "http://" + terminalIP.getText() + "/mtapi/conf/hangupconf";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":1}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+    }//GEN-LAST:event_btnhangUpActionPerformed
+//登陆telnet进行关闭看门狗等操作
+    private void btntelnetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btntelnetActionPerformed
+        try {
+            TelnetUtil telnet = new TelnetUtil(terminalIP.getText(), "admin", "admin");
+            System.out.println(telnet.doPreSetting());
+            logArea.setText("OK!");
+        } catch (Exception e) {
+            logArea.setText("操作未能完成:\n");
+            logArea.setText("错误:" + e.toString());
+        }
+    }//GEN-LAST:event_btntelnetActionPerformed
+
+    private void btnVidSourceApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidSourceApply_sky300ActionPerformed
+        String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/assvidinport";
+        String param = "{\"head\":{\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"emVideoType\":10,\"emVideoInPort\":" + comboboxassVideoSource_sky300.getSelectedItem().toString().replaceAll("VGA/YPbPr_1", "15").replaceAll("HDMI_1", "7") + "}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+        comboboxVGAOutput_sky300.removeItem("HDMI_1");
+        comboboxVGAOutput_sky300.removeItem("VGA/YPbPr_1");
+        comboboxHDMI2Output_sky300.removeItem("HDMI_1");
+        comboboxHDMI2Output_sky300.removeItem("VGA/YPbPr_1");
+        comboboxHDMI3Output_sky300.removeItem("HDMI_1");
+        comboboxHDMI3Output_sky300.removeItem("VGA/YPbPr_1");
+
+        comboboxVGAOutput_sky300.addItem(comboboxassVideoSource_sky300.getSelectedItem().toString());
+        comboboxHDMI2Output_sky300.addItem(comboboxassVideoSource_sky300.getSelectedItem().toString());
+        comboboxHDMI3Output_sky300.addItem(comboboxassVideoSource_sky300.getSelectedItem().toString());
+
+
+    }//GEN-LAST:event_btnVidSourceApply_sky300ActionPerformed
+
+    private void btnvideoPALApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvideoPALApply_sky300ActionPerformed
+        String main = Sky300ini.mainVidOutPAL.get((String) comboboxmainVideoPAL_sky300.getSelectedItem());
+        String ass = Sky300ini.assVidOutPAL.get((String) comboboxassVideoPAL_sky300.getSelectedItem());
+        String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/hdresoutput";
+        String param = "{\"head\":{\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"emFirst_priom_video_res\":" + main + ",\"emFirst_priom_vga_res\":" + main + ",\"emSecond_priom_video_res\":6,\"emSecond_priom_vga_res\":6,\"emAss_video_res\":" + ass + "}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+    }//GEN-LAST:event_btnvideoPALApply_sky300ActionPerformed
+
+    private void btnAudPreferApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudPreferApply_sky300ActionPerformed
+        String param = null;
+        String vidprefer = Sky300ini.AudPrefer.get((String) comboboxAudPrefer_sky300.getSelectedItem());
+
+        if (comboboxAudPrefer_sky300.getSelectedIndex() == 10 || comboboxAudPrefer_sky300.getSelectedIndex() == 11) {
+            param = "{\"head\":{\"userid\":\"\",\"freeloginuser\":true,\"seqid\":1},\"body\":{\"emAudioFormat\":" + vidprefer + ",\"emAacChannelNum\":2}}";
+        } else {
+            param = "{\"head\":{\"userid\":\"\",\"freeloginuser\":true,\"seqid\":1},\"body\":{\"emAudioFormat\":" + vidprefer + ",\"emAacChannelNum\":1}}";
+        }
+        System.out.println(comboboxAudPrefer_sky300.getSelectedIndex());
+        String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/audioprior";
+
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+    }//GEN-LAST:event_btnAudPreferApply_sky300ActionPerformed
+
+    private void btnVidPreeferApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidPreeferApply_sky300ActionPerformed
+        String mainVidFormat = Sky300ini.VidPrefer.get((String) comboboxMainVidPrefer_sky300.getSelectedItem());
+        String assVidFormat = Sky300ini.VidPrefer.get((String) comboboxAssVidPrefer_sky300.getSelectedItem());
+        String mainVidRes = Sky300ini.VidRes.get((String) comboboxmainVideoPrePAL_sky300.getSelectedItem());
+        String assVidRes = Sky300ini.VidRes.get((String) comboboxassVideoPrePAL_sky300.getSelectedItem());
+        //System.out.println(mainVidFormat + assVidFormat + mainVidRes + assVidRes);
+
+        String URLPriVidprior = "http://" + terminalIP.getText() + "/mtapi/cfg/prividprior";
+        String URLAssVidprior = "http://" + terminalIP.getText() + "/mtapi/cfg/vidassvidprior";
+        String URLPCVidprior = "http://" + terminalIP.getText() + "/mtapi/cfg/pcassvidprior";
+        String paramPriVidprior = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"atVideoPriorParam\":[{\"emVideoFormat\":" + mainVidFormat + ",\"emVideoRes\":" + mainVidRes + "}]}}";
+        String paramAssVidprior = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"emVideoFormat\":" + assVidFormat + ",\"emVideoRes\":" + assVidRes + "}}";
+        String paramPCVidprior = paramAssVidprior;
+        String result1 = httpPost(URLPriVidprior, paramPriVidprior);
+        String result2 = httpPost(URLAssVidprior, paramAssVidprior);
+        String result3 = httpPost(URLPCVidprior, paramPCVidprior);
+        logArea.setText("URL: " + URLPriVidprior + "\n");
+        logArea.append("URL: " + URLAssVidprior + "\n");
+        logArea.append("URL: " + URLPCVidprior + "\n");
+        logArea.append("Payload: " + paramPriVidprior + "\n\n");
+        logArea.append("Payload: " + paramAssVidprior + "\n\n");
+        logArea.append("Payload: " + paramPCVidprior + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result1.replaceAll("\n", "").replaceAll("\t", "") + "\n");
+        logArea.append(result2.replaceAll("\n", "").replaceAll("\t", "") + "\n");
+        logArea.append(result3.replaceAll("\n", "").replaceAll("\t", "") + "\n");
+
+    }//GEN-LAST:event_btnVidPreeferApply_sky300ActionPerformed
+
+    private void cboxAudInAUX_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudInAUX_sky300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudInAUX_sky300ActionPerformed
+
+    private void cboxAudOutAUX__sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudOutAUX__sky300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudOutAUX__sky300ActionPerformed
+
+    private void cboxAudOutHDMI3_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudOutHDMI3_sky300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudOutHDMI3_sky300ActionPerformed
+
+    private void btnAudOUTApply_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudOUTApply_sky300ActionPerformed
+        List<String> AudMartix = new ArrayList<>();
+        if (cboxAudOutAUX__sky300.isSelected()) {
+            AudMartix.add("3");
+        }
+        if (cbocxAudOutHDMI2_sky300.isSelected()) {
+            AudMartix.add("6");
+        }
+        if (cboxAudOutHDMI3_sky300.isSelected()) {
+            AudMartix.add("8");
+        }
+        //System.out.println(AudMartix.toString());
+        String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/audoutportlist";
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"aemAudOutPortList\":" + AudMartix.toString() + "}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+
+    }//GEN-LAST:event_btnAudOUTApply_sky300ActionPerformed
+
+    private void btnaudIn_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaudIn_sky300ActionPerformed
+        List<String> LineIn = new ArrayList<>();
+        List<String> AudMIC = new ArrayList<>();
+        if (cboxAudInAUX_sky300.isSelected()) {
+            LineIn.add("8");
+        }
+        if (cboxAudInHDMI_sky300.isSelected()) {
+            LineIn.add("9");
+        }
+        AudMIC.add(comboboxAudMIC_sky300.getSelectedItem().toString().replaceAll("卡侬MIC", "3").replaceAll("数字MIC", "1").replaceAll("无线MIC", "4").replaceAll("内置MIC", "17").replaceAll("无MIC", ""));
+        String URL = "http://" + terminalIP.getText() + "/mtapi/cfg/audinportlist";
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"tPriMicPortList\":{\"aemAudInPortList\":" + AudMIC + "},\"tLineInPortList\":{\"aemAudInPortList\":" + LineIn + "},\"bIsAuxMic\":\"\"}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));        // TODO add your handling code here:
+    }//GEN-LAST:event_btnaudIn_sky300ActionPerformed
+
+    private void meetingWatcherActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_meetingWatcherActionPerformed
+        MeetingInfoGUI MeetingInfoGUI = new MeetingInfoGUI();
+        if (meetingWatcher.isSelected() == true) {
+
+            Toolkit kit = Toolkit.getDefaultToolkit();
+            //MeetingInfoGUI.dispose();
+            MeetingInfoGUI.setVisible(true);
+            MeetingInfoGUI.setLocation(kit.getScreenSize().width - 610, 10);
+        } else {
+            MeetingInfoGUI.dispose();
+
+        }
+
+        //MeetingInfoGUI.dispose();
+        //MeetingInfoGUI.setUndecorated(true);
+        //kit.getScreenSize();
+        //MeetingInfoGUI.dispatchEvent(new WindowEvent(MeetingInfoGUI,WindowEvent.WINDOW_CLOSING) );
+        //MeetingInfoGUI.dispose();
+        //MeetingInfoGUI.removeAll();
+        //MeetingInfoGUI.transferFocus();
+        //MeetingInfoGUI.setVisible(false); ;
+
+    }//GEN-LAST:event_meetingWatcherActionPerformed
+
+    private void btnstartAssVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstartAssVidActionPerformed
+        String URL = "http://" + terminalIP.getText() + "/mtapi/monitor/videoassstream";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":true,\"eventid\":\"videoassstream\"}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+    }//GEN-LAST:event_btnstartAssVidActionPerformed
+
+    private void btnstopAssVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnstopAssVidActionPerformed
+        String URL = "http://" + terminalIP.getText() + "/mtapi/monitor/videoassstream";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":false,\"eventid\":\"videoassstream\"}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+
+    }//GEN-LAST:event_btnstopAssVidActionPerformed
+
+    private void btnoppoStartAssVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnoppoStartAssVidActionPerformed
+        String URL = "http://" + oppositeIP.getText() + "/mtapi/monitor/videoassstream";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":true,\"eventid\":\"videoassstream\"}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));   // TODO add your handling code here:
+    }//GEN-LAST:event_btnoppoStartAssVidActionPerformed
+
+    private void btnoppoStopAssVidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnoppoStopAssVidActionPerformed
+        String URL = "http://" + oppositeIP.getText() + "/mtapi/monitor/videoassstream";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":false,\"eventid\":\"videoassstream\"}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));   // TODO add your handling code here:        // TODO add your handling code here:
+    }//GEN-LAST:event_btnoppoStopAssVidActionPerformed
+
+    private void btnsingleLoopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnsingleLoopActionPerformed
+        if (btnsingleLoop.isSelected()) {
+            String URL = "http://" + terminalIP.getText() + "/mtapi/deviceinfo/singleloopbacktest";
+            //JSONObject JSONObject = new JSONObject();
+            String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"param1\":{\"basetype\":true},\"param2\":{\"basetype\":0},\"param3\":{\"basetype\":0}}}";
+            String result = httpPost(URL, param);
+            logArea.setText("URL: " + URL + "\n");
+            logArea.append("Payload: " + param + "\n\n");
+            logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+            logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+            btnsingleLoop.setText("停止自环");
+
+        } else {
+            String URL = "http://" + terminalIP.getText() + "/mtapi/deviceinfo/singleloopbacktest";
+            //JSONObject JSONObject = new JSONObject();
+            String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"param1\":{\"basetype\":false},\"param2\":{\"basetype\":0},\"param3\":{\"basetype\":0}}}";
+            String result = httpPost(URL, param);
+            logArea.setText("URL: " + URL + "\n");
+            logArea.append("Payload: " + param + "\n\n");
+            logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+            logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+            btnsingleLoop.setText("开始自环");
+        }   // TODO add your handling code here:
+    }//GEN-LAST:event_btnsingleLoopActionPerformed
+
+    private void btnsingleLoopStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnsingleLoopStateChanged
+
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnsingleLoopStateChanged
+
+    private void btnaudioCheckStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_btnaudioCheckStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnaudioCheckStateChanged
+
+    private void btnaudioCheckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaudioCheckActionPerformed
+
+        String URL = "http://" + terminalIP.getText() + "/mtapi/detect/setautoaudiodelaycheck";
+        //JSONObject JSONObject = new JSONObject();
+        String param = "{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{\"basetype\":true}}";
+        String result = httpPost(URL, param);
+        logArea.setText("URL: " + URL + "\n");
+        logArea.append("Payload: " + param + "\n\n");
+        logArea.append("****************************************************************************RESPONSE****************************************************************************\n");
+        logArea.append(result.replaceAll("\n", "").replaceAll("\t", ""));
+        logArea.append("\n声场检测已经开始,请等待声场检测完成!!!");
+
+
+    }//GEN-LAST:event_btnaudioCheckActionPerformed
+
+    private void comboboxselectVidOutput_sky300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxselectVidOutput_sky300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxselectVidOutput_sky300ActionPerformed
+
+    private void comboboxmainVideoPrePAL_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxmainVideoPrePAL_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxmainVideoPrePAL_X300ActionPerformed
+
+    private void btnvideoPALApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnvideoPALApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnvideoPALApply_X300ActionPerformed
+
+    private void comboboxselectVidOutput_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboboxselectVidOutput_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxselectVidOutput_X300ActionPerformed
+
+    private void btnVidPreeferApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidPreeferApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVidPreeferApply_X300ActionPerformed
+
+    private void btnVidMatrixApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidMatrixApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVidMatrixApply_X300ActionPerformed
+
+    private void comboboxMainVidPrefer_X300ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxMainVidPrefer_X300ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxMainVidPrefer_X300ItemStateChanged
+
+    private void comboboxAssVidPrefer_X300ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_comboboxAssVidPrefer_X300ItemStateChanged
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboboxAssVidPrefer_X300ItemStateChanged
+
+    private void btnVidSourceApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVidSourceApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVidSourceApply_X300ActionPerformed
+
+    private void btnAudPreferApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudPreferApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAudPreferApply_X300ActionPerformed
+
+    private void cboxAudInAUX_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudInAUX_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudInAUX_X300ActionPerformed
+
+    private void btnaudIn_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnaudIn_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnaudIn_X300ActionPerformed
+
+    private void cboxAudOutAUX__X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudOutAUX__X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudOutAUX__X300ActionPerformed
+
+    private void cboxAudOutHDMI3_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxAudOutHDMI3_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxAudOutHDMI3_X300ActionPerformed
+
+    private void btnAudOUTApply_X300ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAudOUTApply_X300ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAudOUTApply_X300ActionPerformed
+    public void hideTab() {
+        for (int tab = 0; tab < (TabbedPanel.getTabCount() - 1); tab++) {
+            TabbedPanel.setEnabledAt(tab, false);
+        }
+    }
+
+    public void getTerminalType() {
+        Gson gson = new Gson();
+        try {
+            String terminalGloableState = HttpUtils.httpGet("http://" + terminalIP.getText() + "/mtapi/entity/globalstate?{\"head\":{\"sessionid\":\"undefined\",\"userid\":\"\",\"freeloginuser\":true,\"seqid\":null},\"body\":{}}");
+            JsonObject body = new JsonParser().parse(terminalGloableState).getAsJsonObject().get("body").getAsJsonObject();
+            int TP = body.get("emMtModel").getAsInt();
+            //System.out.println(TP);
+            //System.out.println(body.get("emMtModel"));
+            //终端类型sky300
+            if (34<=TP&&TP<=43 ) {
+                hideTab();
+                logArea.setText("终端类型获取成功!");
+                TabbedPanel.setEnabledAt(3, true);
+                TabbedPanel.setSelectedIndex(3);
+
+            } 
+            else if (27<=TP&&TP<=30 ) {
+                hideTab();
+                logArea.setText("终端类型获取成功!");
+                TabbedPanel.setEnabledAt(2, true);
+                TabbedPanel.setSelectedIndex(2);
+            } 
+            else if (31<=TP&&TP<=33 ) {
+                System.out.println("x500 1080p");
+                        
+            }
+            else if (23<=TP&&TP<=26) {
+                hideTab();
+                logArea.setText("终端类型获取成功!");
+                TabbedPanel.setEnabledAt(0, true);
+                TabbedPanel.setSelectedIndex(1);
+            }
+            else if (9<=TP&&TP<=15) {
+                hideTab();
+                logArea.setText("终端类型获取成功!");
+                TabbedPanel.setEnabledAt(0, true);
+                TabbedPanel.setSelectedIndex(0);
+            }
+            else {
+                hideTab();
+                logArea.setText("当前终端暂时不支持");
+            }
+        } catch (Exception e) {
+            hideTab();
+            logArea.setText("发生错误: " + e.toString());
+        }
+    }
+
+    public Object[] getVidPrefer(String terminalType,String VidChan) {
+        Object[] VidPrefer = new Object[]{};
+        if (terminalType=="sky300"){
+        if (VidChan == "main") {
+            Map<String, String[]> map = Sky300ini.mainVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        } else {
+            Map<String, String[]> map = Sky300ini.assVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        }
+        
+    }else if(terminalType=="x300"){
+    if (VidChan == "main") {
+            Map<String, String[]> map = X300ini.mainVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        } else {
+            Map<String, String[]> map = X300ini.assVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        }
+    }else if(terminalType=="x500"){
+    if (VidChan == "main") {
+            Map<String, String[]> map = X500ini.mainVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        } else {
+            Map<String, String[]> map = X500ini.assVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        }
+    }else if(terminalType=="x700"){
+    if (VidChan == "main") {
+            Map<String, String[]> map = X700ini.mainVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        } else {
+            Map<String, String[]> map = X700ini.assVidPrefer;
+            VidPrefer = map.keySet().toArray();
+        }
+    }
+        return VidPrefer;
+    }
+
+    public String[] getVidPAL(String terminalType,String vidPrefer, String selectedVidPrefer) {
+        String[] VidPAL = new String[]{};
+        if(terminalType=="sky300"){
+        if (vidPrefer == "main") {
+            Map<String, String[]> map = Sky300ini.mainVidPrefer;
+            VidPAL = map.get(selectedVidPrefer);
+        } else {
+            Map<String, String[]> map = Sky300ini.assVidPrefer;
+            VidPAL = map.get(selectedVidPrefer);
+        }
+        }else if (terminalType=="X300"){
+            if (vidPrefer == "main") {
+                Map<String, String[]> map = X300ini.mainVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            } else {
+                Map<String, String[]> map = X300ini.assVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            }
+
+        }else if (terminalType=="X500"){
+            if (vidPrefer == "main") {
+                Map<String, String[]> map = X500ini.mainVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            } else {
+                Map<String, String[]> map = X500ini.assVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            }
+
+        }
+        else if (terminalType=="X700"){
+            if (vidPrefer == "main") {
+                Map<String, String[]> map = X700ini.mainVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            } else {
+                Map<String, String[]> map = X700ini.assVidPrefer;
+                VidPAL = map.get(selectedVidPrefer);
+            }
+
+        }
+        return VidPAL;
+    }
+
+    private void itemChange(String VidChan) {
+        if (VidChan == "main") {
+            String selected = (String) comboboxMainVidPrefer_sky300.getSelectedItem();
+            comboboxmainVideoPrePAL_sky300.removeAllItems();
+            String[] VidPAL = getVidPAL("sky300","main", selected);
+            comboboxmainVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(VidPAL));
+        } else {
+            String selected = (String) comboboxAssVidPrefer_sky300.getSelectedItem();
+            comboboxassVideoPrePAL_sky300.removeAllItems();
+            String[] VidPAL = getVidPAL("sky300","ass", selected);
+            comboboxassVideoPrePAL_sky300.setModel(new DefaultComboBoxModel(VidPAL));
+        }
+    }
 
     /**
      * @param args the command line arguments
@@ -367,7 +1908,7 @@ public class GUI extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -392,41 +1933,133 @@ public class GUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> HDMI2Output;
-    private javax.swing.JComboBox<String> HDMI3Output;
-    private javax.swing.JComboBox<String> VGAOutput;
-    private javax.swing.JButton VdiMatrixApply;
-    private javax.swing.JButton VidSourceApply;
-    private javax.swing.JComboBox<String> assVideoPAL;
-    private javax.swing.JComboBox<String> assVideoPrePAL;
-    private javax.swing.JComboBox<String> assVideoSource;
+    private javax.swing.JComboBox<String> ComboboxcallProtocol;
+    private javax.swing.JPanel SKY300;
+    private javax.swing.JTabbedPane TabbedPanel;
+    private javax.swing.JPanel X300;
+    private javax.swing.JPanel audioSettings_X300;
+    private javax.swing.JPanel audioSettings_sky300;
+    private javax.swing.JButton btnAudOUTApply_X300;
+    private javax.swing.JButton btnAudOUTApply_sky300;
+    private javax.swing.JButton btnAudPreferApply_X300;
+    private javax.swing.JButton btnAudPreferApply_sky300;
+    private javax.swing.JButton btnVidMatrixApply_X300;
+    private javax.swing.JButton btnVidMatrixApply_sky300;
+    private javax.swing.JButton btnVidPreeferApply_X300;
+    private javax.swing.JButton btnVidPreeferApply_sky300;
+    private javax.swing.JButton btnVidSourceApply_X300;
+    private javax.swing.JButton btnVidSourceApply_sky300;
+    private javax.swing.JButton btnaudIn_X300;
+    private javax.swing.JButton btnaudIn_sky300;
+    private javax.swing.JToggleButton btnaudioCheck;
+    private javax.swing.JButton btncall;
+    private javax.swing.JButton btnhangUp;
+    private javax.swing.JButton btnoppoStartAssVid;
+    private javax.swing.JButton btnoppoStopAssVid;
+    private javax.swing.JToggleButton btnsingleLoop;
+    private javax.swing.JButton btnstartAssVid;
+    private javax.swing.JButton btnstopAssVid;
+    private javax.swing.JButton btntelnet;
+    private javax.swing.JButton btnvideoPALApply_X300;
+    private javax.swing.JButton btnvideoPALApply_sky300;
+    private javax.swing.JCheckBox cbocxAudOutHDMI2_X300;
+    private javax.swing.JCheckBox cbocxAudOutHDMI2_sky300;
+    private javax.swing.JCheckBox cboxAudInAUX_X300;
+    private javax.swing.JCheckBox cboxAudInAUX_sky300;
+    private javax.swing.JCheckBox cboxAudInHDMI_X300;
+    private javax.swing.JCheckBox cboxAudInHDMI_sky300;
+    private javax.swing.JCheckBox cboxAudOutAUX__X300;
+    private javax.swing.JCheckBox cboxAudOutAUX__sky300;
+    private javax.swing.JCheckBox cboxAudOutHDMI3_X300;
+    private javax.swing.JCheckBox cboxAudOutHDMI3_sky300;
+    private javax.swing.JComboBox<String> comboboxAssVidPrefer_X300;
+    private javax.swing.JComboBox<String> comboboxAssVidPrefer_sky300;
+    private javax.swing.JComboBox<String> comboboxAudMIC_X300;
+    private javax.swing.JComboBox<String> comboboxAudMIC_sky300;
+    private javax.swing.JComboBox<String> comboboxAudPrefer_X300;
+    private javax.swing.JComboBox<String> comboboxAudPrefer_sky300;
+    private javax.swing.JComboBox<String> comboboxHDMI2Output_X300;
+    private javax.swing.JComboBox<String> comboboxHDMI2Output_sky300;
+    private javax.swing.JComboBox<String> comboboxHDMI3Output_X300;
+    private javax.swing.JComboBox<String> comboboxHDMI3Output_sky300;
+    private javax.swing.JComboBox<String> comboboxMainVidPrefer_X300;
+    private javax.swing.JComboBox<String> comboboxMainVidPrefer_sky300;
+    private javax.swing.JComboBox<String> comboboxVGAOutput_X300;
+    private javax.swing.JComboBox<String> comboboxVGAOutput_sky300;
+    private javax.swing.JComboBox<String> comboboxassVideoPAL_X300;
+    private javax.swing.JComboBox<String> comboboxassVideoPAL_sky300;
+    private javax.swing.JComboBox<String> comboboxassVideoPrePAL_X300;
+    private javax.swing.JComboBox<String> comboboxassVideoPrePAL_sky300;
+    private javax.swing.JComboBox<String> comboboxassVideoSource_X300;
+    private javax.swing.JComboBox<String> comboboxassVideoSource_sky300;
+    private javax.swing.JComboBox<String> comboboxcallRate;
+    private javax.swing.JComboBox<String> comboboxmainVidSource_X300;
+    private javax.swing.JComboBox<String> comboboxmainVidSource_sky300;
+    private javax.swing.JComboBox<String> comboboxmainVideoPAL_X300;
+    private javax.swing.JComboBox<String> comboboxmainVideoPAL_sky300;
+    private javax.swing.JComboBox<String> comboboxmainVideoPrePAL_X300;
+    private javax.swing.JComboBox<String> comboboxmainVideoPrePAL_sky300;
+    private javax.swing.JComboBox<String> comboboxselectVidInput_X300;
+    private javax.swing.JComboBox<String> comboboxselectVidInput_sky300;
+    private javax.swing.JComboBox<String> comboboxselectVidOutput_X300;
+    private javax.swing.JComboBox<String> comboboxselectVidOutput_sky300;
     private javax.swing.JPanel function;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
-    private javax.swing.JTabbedPane mainTabpanel;
-    private javax.swing.JComboBox<String> mainVidSource;
-    private javax.swing.JComboBox<String> mainVideoPAL;
-    private javax.swing.JComboBox<String> mainVideoPrePAL;
-    private javax.swing.JButton selectVidApply;
-    private javax.swing.JComboBox<String> selectVidInput;
-    private javax.swing.JComboBox<String> selectVidOutput;
-    private javax.swing.JPanel settings;
-    private javax.swing.JButton videoPALApply;
-    private javax.swing.JPanel videoSettings;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JLabel labAlarmInfo;
+    private javax.swing.JLabel labAudOut_X300;
+    private javax.swing.JLabel labAudOut_sky300;
+    private javax.swing.JLabel labAudPrefer_X300;
+    private javax.swing.JLabel labAudPrefer_sky300;
+    private javax.swing.JLabel labAudio_X300;
+    private javax.swing.JLabel labAudio_sky300;
+    private javax.swing.JLabel labHDMI2OOut_X300;
+    private javax.swing.JLabel labHDMI2OOut_sky300;
+    private javax.swing.JLabel labHDMI3Out_X300;
+    private javax.swing.JLabel labHDMI3Out_sky300;
+    private javax.swing.JLabel labTerminalIP;
+    private javax.swing.JLabel labVGAOut_X300;
+    private javax.swing.JLabel labVGAOut_sky300;
+    private javax.swing.JLabel labVidInType_X300;
+    private javax.swing.JLabel labVidInType_sky300;
+    private javax.swing.JLabel labVidOutType_X300;
+    private javax.swing.JLabel labVidOutType_sky300;
+    private javax.swing.JLabel labVideo_X300;
+    private javax.swing.JLabel labVideo_sky300;
+    private javax.swing.JLabel labassVidPAL_X300;
+    private javax.swing.JLabel labassVidPAL_sky300;
+    private javax.swing.JLabel labassVidPreferPAL_X300;
+    private javax.swing.JLabel labassVidPreferPAL_sky300;
+    private javax.swing.JLabel labassVidPrefer_X300;
+    private javax.swing.JLabel labassVidPrefer_sky300;
+    private javax.swing.JLabel labassVidSource_X300;
+    private javax.swing.JLabel labassVidSource_sky300;
+    private javax.swing.JLabel labaudIn_X300;
+    private javax.swing.JLabel labaudIn_sky300;
+    private javax.swing.JLabel labmainVIdpreferPAL_X300;
+    private javax.swing.JLabel labmainVIdpreferPAL_sky300;
+    private javax.swing.JLabel labmainVidPAL_X300;
+    private javax.swing.JLabel labmainVidPAL_sky300;
+    private javax.swing.JLabel labmainVidPrefer_X300;
+    private javax.swing.JLabel labmainVidPrefer_sky300;
+    private javax.swing.JLabel labmainVidSource_X300;
+    private javax.swing.JLabel labmainVidSource_sky300;
+    private javax.swing.JLabel labtelnet;
+    private javax.swing.JTextArea logArea;
+    private javax.swing.JToggleButton meetingWatcher;
+    private javax.swing.JFormattedTextField oppositeIP;
+    private javax.swing.JPanel panelaudIn_X300;
+    private javax.swing.JPanel panelaudIn_sky300;
+    private javax.swing.JPanel panelaudOut_X300;
+    private javax.swing.JPanel panelaudOut_sky300;
+    private javax.swing.JFormattedTextField terminalIP;
+    private javax.swing.JPanel videoSettings_X300;
+    private javax.swing.JPanel videoSettings_sky300;
     // End of variables declaration//GEN-END:variables
 }
